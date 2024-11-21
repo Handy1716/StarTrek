@@ -9,6 +9,7 @@ namespace R6UHP1_HSZF_2024251.Persistence.MsSql.Infrastructure.Entities
     public class SpaceShip
     {
         public int Id { get; set; }
+        int alma;
         public string Name { get; set; }
         public string Type { get; set; }
         public int CrewCount { get; set; }
