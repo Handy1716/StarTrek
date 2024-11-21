@@ -2,20 +2,6 @@
   "version": 3,
   "targets": {
     "net8.0": {
-      "R6UHP1_HSZF_2024251.Application/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v8.0",
-        "dependencies": {
-          "R6UHP1_HSZF_2024251.Model": "1.0.0",
-          "R6UHP1_HSZF_2024251.Persistence.MsSql": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/R6UHP1_HSZF_2024251.Application.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/R6UHP1_HSZF_2024251.Application.dll": {}
-        }
-      },
       "R6UHP1_HSZF_2024251.Model/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
@@ -25,44 +11,19 @@
         "runtime": {
           "bin/placeholder/R6UHP1_HSZF_2024251.Model.dll": {}
         }
-      },
-      "R6UHP1_HSZF_2024251.Persistence.MsSql/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v8.0",
-        "dependencies": {
-          "R6UHP1_HSZF_2024251.Model": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/R6UHP1_HSZF_2024251.Persistence.MsSql.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/R6UHP1_HSZF_2024251.Persistence.MsSql.dll": {}
-        }
       }
     }
   },
   "libraries": {
-    "R6UHP1_HSZF_2024251.Application/1.0.0": {
-      "type": "project",
-      "path": "../R6UHP1_HSZF_2024251.Application/R6UHP1_HSZF_2024251.Application.csproj",
-      "msbuildProject": "../R6UHP1_HSZF_2024251.Application/R6UHP1_HSZF_2024251.Application.csproj"
-    },
     "R6UHP1_HSZF_2024251.Model/1.0.0": {
       "type": "project",
       "path": "../R6UHP1_HSZF_2024251.Model/R6UHP1_HSZF_2024251.Model.csproj",
       "msbuildProject": "../R6UHP1_HSZF_2024251.Model/R6UHP1_HSZF_2024251.Model.csproj"
-    },
-    "R6UHP1_HSZF_2024251.Persistence.MsSql/1.0.0": {
-      "type": "project",
-      "path": "../R6UHP1_HSZF_2024251.Persistence.MsSql/R6UHP1_HSZF_2024251.Persistence.MsSql.csproj",
-      "msbuildProject": "../R6UHP1_HSZF_2024251.Persistence.MsSql/R6UHP1_HSZF_2024251.Persistence.MsSql.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net8.0": [
-      "R6UHP1_HSZF_2024251.Application >= 1.0.0",
-      "R6UHP1_HSZF_2024251.Model >= 1.0.0",
-      "R6UHP1_HSZF_2024251.Persistence.MsSql >= 1.0.0"
+      "R6UHP1_HSZF_2024251.Model >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -73,11 +34,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\polga\\source\\repos\\R6UHP1_HSZF_2024251\\R6UHP1_HSZF_2024251\\R6UHP1_HSZF_2024251.Console.csproj",
-      "projectName": "R6UHP1_HSZF_2024251.Console",
-      "projectPath": "C:\\Users\\polga\\source\\repos\\R6UHP1_HSZF_2024251\\R6UHP1_HSZF_2024251\\R6UHP1_HSZF_2024251.Console.csproj",
+      "projectUniqueName": "C:\\Users\\polga\\source\\repos\\R6UHP1_HSZF_2024251\\R6UHP1_HSZF_2024251.Persistence.MsSql\\R6UHP1_HSZF_2024251.Persistence.MsSql.csproj",
+      "projectName": "R6UHP1_HSZF_2024251.Persistence.MsSql",
+      "projectPath": "C:\\Users\\polga\\source\\repos\\R6UHP1_HSZF_2024251\\R6UHP1_HSZF_2024251.Persistence.MsSql\\R6UHP1_HSZF_2024251.Persistence.MsSql.csproj",
       "packagesPath": "C:\\Users\\polga\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\polga\\source\\repos\\R6UHP1_HSZF_2024251\\R6UHP1_HSZF_2024251\\obj\\",
+      "outputPath": "C:\\Users\\polga\\source\\repos\\R6UHP1_HSZF_2024251\\R6UHP1_HSZF_2024251.Persistence.MsSql\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -100,14 +61,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\polga\\source\\repos\\R6UHP1_HSZF_2024251\\R6UHP1_HSZF_2024251.Application\\R6UHP1_HSZF_2024251.Application.csproj": {
-              "projectPath": "C:\\Users\\polga\\source\\repos\\R6UHP1_HSZF_2024251\\R6UHP1_HSZF_2024251.Application\\R6UHP1_HSZF_2024251.Application.csproj"
-            },
             "C:\\Users\\polga\\source\\repos\\R6UHP1_HSZF_2024251\\R6UHP1_HSZF_2024251.Model\\R6UHP1_HSZF_2024251.Model.csproj": {
               "projectPath": "C:\\Users\\polga\\source\\repos\\R6UHP1_HSZF_2024251\\R6UHP1_HSZF_2024251.Model\\R6UHP1_HSZF_2024251.Model.csproj"
-            },
-            "C:\\Users\\polga\\source\\repos\\R6UHP1_HSZF_2024251\\R6UHP1_HSZF_2024251.Persistence.MsSql\\R6UHP1_HSZF_2024251.Persistence.MsSql.csproj": {
-              "projectPath": "C:\\Users\\polga\\source\\repos\\R6UHP1_HSZF_2024251\\R6UHP1_HSZF_2024251.Persistence.MsSql\\R6UHP1_HSZF_2024251.Persistence.MsSql.csproj"
             }
           }
         }
