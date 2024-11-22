@@ -3,6 +3,46 @@
   "WorkspaceRootPath": "C:\\Users\\polga\\source\\repos\\R6UHP1_HSZF_2024251\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{9A897ECD-95E1-44A4-95C8-1FFD0E2297EA}|R6UHP1_HSZF_2024251.Persistence.MsSql\\R6UHP1_HSZF_2024251.Persistence.MsSql.csproj|c:\\users\\polga\\source\\repos\\r6uhp1_hszf_2024251\\r6uhp1_hszf_2024251.persistence.mssql\\infrastructure\\entities\\spaceship.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9A897ECD-95E1-44A4-95C8-1FFD0E2297EA}|R6UHP1_HSZF_2024251.Persistence.MsSql\\R6UHP1_HSZF_2024251.Persistence.MsSql.csproj|solutionrelative:r6uhp1_hszf_2024251.persistence.mssql\\infrastructure\\entities\\spaceship.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9A897ECD-95E1-44A4-95C8-1FFD0E2297EA}|R6UHP1_HSZF_2024251.Persistence.MsSql\\R6UHP1_HSZF_2024251.Persistence.MsSql.csproj|c:\\users\\polga\\source\\repos\\r6uhp1_hszf_2024251\\r6uhp1_hszf_2024251.persistence.mssql\\infrastructure\\entities\\planet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9A897ECD-95E1-44A4-95C8-1FFD0E2297EA}|R6UHP1_HSZF_2024251.Persistence.MsSql\\R6UHP1_HSZF_2024251.Persistence.MsSql.csproj|solutionrelative:r6uhp1_hszf_2024251.persistence.mssql\\infrastructure\\entities\\planet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9A897ECD-95E1-44A4-95C8-1FFD0E2297EA}|R6UHP1_HSZF_2024251.Persistence.MsSql\\R6UHP1_HSZF_2024251.Persistence.MsSql.csproj|c:\\users\\polga\\source\\repos\\r6uhp1_hszf_2024251\\r6uhp1_hszf_2024251.persistence.mssql\\infrastructure\\entities\\mission.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9A897ECD-95E1-44A4-95C8-1FFD0E2297EA}|R6UHP1_HSZF_2024251.Persistence.MsSql\\R6UHP1_HSZF_2024251.Persistence.MsSql.csproj|solutionrelative:r6uhp1_hszf_2024251.persistence.mssql\\infrastructure\\entities\\mission.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9A897ECD-95E1-44A4-95C8-1FFD0E2297EA}|R6UHP1_HSZF_2024251.Persistence.MsSql\\R6UHP1_HSZF_2024251.Persistence.MsSql.csproj|c:\\users\\polga\\source\\repos\\r6uhp1_hszf_2024251\\r6uhp1_hszf_2024251.persistence.mssql\\infrastructure\\entities\\crew.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9A897ECD-95E1-44A4-95C8-1FFD0E2297EA}|R6UHP1_HSZF_2024251.Persistence.MsSql\\R6UHP1_HSZF_2024251.Persistence.MsSql.csproj|solutionrelative:r6uhp1_hszf_2024251.persistence.mssql\\infrastructure\\entities\\crew.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9A897ECD-95E1-44A4-95C8-1FFD0E2297EA}|R6UHP1_HSZF_2024251.Persistence.MsSql\\R6UHP1_HSZF_2024251.Persistence.MsSql.csproj|c:\\users\\polga\\source\\repos\\r6uhp1_hszf_2024251\\r6uhp1_hszf_2024251.persistence.mssql\\infrastructure\\configurations\\spaceshipconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9A897ECD-95E1-44A4-95C8-1FFD0E2297EA}|R6UHP1_HSZF_2024251.Persistence.MsSql\\R6UHP1_HSZF_2024251.Persistence.MsSql.csproj|solutionrelative:r6uhp1_hszf_2024251.persistence.mssql\\infrastructure\\configurations\\spaceshipconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9A897ECD-95E1-44A4-95C8-1FFD0E2297EA}|R6UHP1_HSZF_2024251.Persistence.MsSql\\R6UHP1_HSZF_2024251.Persistence.MsSql.csproj|c:\\users\\polga\\source\\repos\\r6uhp1_hszf_2024251\\r6uhp1_hszf_2024251.persistence.mssql\\infrastructure\\configurations\\planetconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9A897ECD-95E1-44A4-95C8-1FFD0E2297EA}|R6UHP1_HSZF_2024251.Persistence.MsSql\\R6UHP1_HSZF_2024251.Persistence.MsSql.csproj|solutionrelative:r6uhp1_hszf_2024251.persistence.mssql\\infrastructure\\configurations\\planetconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9A897ECD-95E1-44A4-95C8-1FFD0E2297EA}|R6UHP1_HSZF_2024251.Persistence.MsSql\\R6UHP1_HSZF_2024251.Persistence.MsSql.csproj|c:\\users\\polga\\source\\repos\\r6uhp1_hszf_2024251\\r6uhp1_hszf_2024251.persistence.mssql\\infrastructure\\configurations\\missionconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9A897ECD-95E1-44A4-95C8-1FFD0E2297EA}|R6UHP1_HSZF_2024251.Persistence.MsSql\\R6UHP1_HSZF_2024251.Persistence.MsSql.csproj|solutionrelative:r6uhp1_hszf_2024251.persistence.mssql\\infrastructure\\configurations\\missionconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9A897ECD-95E1-44A4-95C8-1FFD0E2297EA}|R6UHP1_HSZF_2024251.Persistence.MsSql\\R6UHP1_HSZF_2024251.Persistence.MsSql.csproj|c:\\users\\polga\\source\\repos\\r6uhp1_hszf_2024251\\r6uhp1_hszf_2024251.persistence.mssql\\infrastructure\\configurations\\crewconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9A897ECD-95E1-44A4-95C8-1FFD0E2297EA}|R6UHP1_HSZF_2024251.Persistence.MsSql\\R6UHP1_HSZF_2024251.Persistence.MsSql.csproj|solutionrelative:r6uhp1_hszf_2024251.persistence.mssql\\infrastructure\\configurations\\crewconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9A897ECD-95E1-44A4-95C8-1FFD0E2297EA}|R6UHP1_HSZF_2024251.Persistence.MsSql\\R6UHP1_HSZF_2024251.Persistence.MsSql.csproj|c:\\users\\polga\\source\\repos\\r6uhp1_hszf_2024251\\r6uhp1_hszf_2024251.persistence.mssql\\infrastructure\\contexts\\dbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9A897ECD-95E1-44A4-95C8-1FFD0E2297EA}|R6UHP1_HSZF_2024251.Persistence.MsSql\\R6UHP1_HSZF_2024251.Persistence.MsSql.csproj|solutionrelative:r6uhp1_hszf_2024251.persistence.mssql\\infrastructure\\contexts\\dbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9A897ECD-95E1-44A4-95C8-1FFD0E2297EA}|R6UHP1_HSZF_2024251.Persistence.MsSql\\R6UHP1_HSZF_2024251.Persistence.MsSql.csproj|c:\\users\\polga\\source\\repos\\r6uhp1_hszf_2024251\\r6uhp1_hszf_2024251.persistence.mssql\\r6uhp1_hszf_2024251.persistence.mssql.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{9A897ECD-95E1-44A4-95C8-1FFD0E2297EA}|R6UHP1_HSZF_2024251.Persistence.MsSql\\R6UHP1_HSZF_2024251.Persistence.MsSql.csproj|solutionrelative:r6uhp1_hszf_2024251.persistence.mssql\\r6uhp1_hszf_2024251.persistence.mssql.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{BACCF1F6-B7E6-42F5-AD1E-EBE1C3042DE8}|R6UHP1_HSZF_2024251.Application\\R6UHP1_HSZF_2024251.Application.csproj|c:\\users\\polga\\source\\repos\\r6uhp1_hszf_2024251\\r6uhp1_hszf_2024251.application\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BACCF1F6-B7E6-42F5-AD1E-EBE1C3042DE8}|R6UHP1_HSZF_2024251.Application\\R6UHP1_HSZF_2024251.Application.csproj|solutionrelative:r6uhp1_hszf_2024251.application\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -14,15 +54,149 @@
       "DocumentGroups": [
         {
           "DockedWidth": 314,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 6,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "SpaceShipConfiguration.cs",
+              "DocumentMoniker": "C:\\Users\\polga\\source\\repos\\R6UHP1_HSZF_2024251\\R6UHP1_HSZF_2024251.Persistence.MsSql\\Infrastructure\\Configurations\\SpaceShipConfiguration.cs",
+              "RelativeDocumentMoniker": "R6UHP1_HSZF_2024251.Persistence.MsSql\\Infrastructure\\Configurations\\SpaceShipConfiguration.cs",
+              "ToolTip": "C:\\Users\\polga\\source\\repos\\R6UHP1_HSZF_2024251\\R6UHP1_HSZF_2024251.Persistence.MsSql\\Infrastructure\\Configurations\\SpaceShipConfiguration.cs",
+              "RelativeToolTip": "R6UHP1_HSZF_2024251.Persistence.MsSql\\Infrastructure\\Configurations\\SpaceShipConfiguration.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-21T12:22:26.453Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "PlanetConfiguration.cs",
+              "DocumentMoniker": "C:\\Users\\polga\\source\\repos\\R6UHP1_HSZF_2024251\\R6UHP1_HSZF_2024251.Persistence.MsSql\\Infrastructure\\Configurations\\PlanetConfiguration.cs",
+              "RelativeDocumentMoniker": "R6UHP1_HSZF_2024251.Persistence.MsSql\\Infrastructure\\Configurations\\PlanetConfiguration.cs",
+              "ToolTip": "C:\\Users\\polga\\source\\repos\\R6UHP1_HSZF_2024251\\R6UHP1_HSZF_2024251.Persistence.MsSql\\Infrastructure\\Configurations\\PlanetConfiguration.cs",
+              "RelativeToolTip": "R6UHP1_HSZF_2024251.Persistence.MsSql\\Infrastructure\\Configurations\\PlanetConfiguration.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-21T12:22:16.17Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "MissionConfiguration.cs",
+              "DocumentMoniker": "C:\\Users\\polga\\source\\repos\\R6UHP1_HSZF_2024251\\R6UHP1_HSZF_2024251.Persistence.MsSql\\Infrastructure\\Configurations\\MissionConfiguration.cs",
+              "RelativeDocumentMoniker": "R6UHP1_HSZF_2024251.Persistence.MsSql\\Infrastructure\\Configurations\\MissionConfiguration.cs",
+              "ToolTip": "C:\\Users\\polga\\source\\repos\\R6UHP1_HSZF_2024251\\R6UHP1_HSZF_2024251.Persistence.MsSql\\Infrastructure\\Configurations\\MissionConfiguration.cs",
+              "RelativeToolTip": "R6UHP1_HSZF_2024251.Persistence.MsSql\\Infrastructure\\Configurations\\MissionConfiguration.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-21T12:22:04.322Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "CrewConfiguration.cs",
+              "DocumentMoniker": "C:\\Users\\polga\\source\\repos\\R6UHP1_HSZF_2024251\\R6UHP1_HSZF_2024251.Persistence.MsSql\\Infrastructure\\Configurations\\CrewConfiguration.cs",
+              "RelativeDocumentMoniker": "R6UHP1_HSZF_2024251.Persistence.MsSql\\Infrastructure\\Configurations\\CrewConfiguration.cs",
+              "ToolTip": "C:\\Users\\polga\\source\\repos\\R6UHP1_HSZF_2024251\\R6UHP1_HSZF_2024251.Persistence.MsSql\\Infrastructure\\Configurations\\CrewConfiguration.cs",
+              "RelativeToolTip": "R6UHP1_HSZF_2024251.Persistence.MsSql\\Infrastructure\\Configurations\\CrewConfiguration.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-21T12:21:52.526Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "SpaceShip.cs",
+              "DocumentMoniker": "C:\\Users\\polga\\source\\repos\\R6UHP1_HSZF_2024251\\R6UHP1_HSZF_2024251.Persistence.MsSql\\Infrastructure\\Entities\\SpaceShip.cs",
+              "RelativeDocumentMoniker": "R6UHP1_HSZF_2024251.Persistence.MsSql\\Infrastructure\\Entities\\SpaceShip.cs",
+              "ToolTip": "C:\\Users\\polga\\source\\repos\\R6UHP1_HSZF_2024251\\R6UHP1_HSZF_2024251.Persistence.MsSql\\Infrastructure\\Entities\\SpaceShip.cs",
+              "RelativeToolTip": "R6UHP1_HSZF_2024251.Persistence.MsSql\\Infrastructure\\Entities\\SpaceShip.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-21T12:13:37.254Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Planet.cs",
+              "DocumentMoniker": "C:\\Users\\polga\\source\\repos\\R6UHP1_HSZF_2024251\\R6UHP1_HSZF_2024251.Persistence.MsSql\\Infrastructure\\Entities\\Planet.cs",
+              "RelativeDocumentMoniker": "R6UHP1_HSZF_2024251.Persistence.MsSql\\Infrastructure\\Entities\\Planet.cs",
+              "ToolTip": "C:\\Users\\polga\\source\\repos\\R6UHP1_HSZF_2024251\\R6UHP1_HSZF_2024251.Persistence.MsSql\\Infrastructure\\Entities\\Planet.cs",
+              "RelativeToolTip": "R6UHP1_HSZF_2024251.Persistence.MsSql\\Infrastructure\\Entities\\Planet.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAkwAsAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-21T12:13:48.341Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Mission.cs",
+              "DocumentMoniker": "C:\\Users\\polga\\source\\repos\\R6UHP1_HSZF_2024251\\R6UHP1_HSZF_2024251.Persistence.MsSql\\Infrastructure\\Entities\\Mission.cs",
+              "RelativeDocumentMoniker": "R6UHP1_HSZF_2024251.Persistence.MsSql\\Infrastructure\\Entities\\Mission.cs",
+              "ToolTip": "C:\\Users\\polga\\source\\repos\\R6UHP1_HSZF_2024251\\R6UHP1_HSZF_2024251.Persistence.MsSql\\Infrastructure\\Entities\\Mission.cs",
+              "RelativeToolTip": "R6UHP1_HSZF_2024251.Persistence.MsSql\\Infrastructure\\Entities\\Mission.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAABQAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-21T12:14:00.596Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Crew.cs",
+              "DocumentMoniker": "C:\\Users\\polga\\source\\repos\\R6UHP1_HSZF_2024251\\R6UHP1_HSZF_2024251.Persistence.MsSql\\Infrastructure\\Entities\\Crew.cs",
+              "RelativeDocumentMoniker": "R6UHP1_HSZF_2024251.Persistence.MsSql\\Infrastructure\\Entities\\Crew.cs",
+              "ToolTip": "C:\\Users\\polga\\source\\repos\\R6UHP1_HSZF_2024251\\R6UHP1_HSZF_2024251.Persistence.MsSql\\Infrastructure\\Entities\\Crew.cs",
+              "RelativeToolTip": "R6UHP1_HSZF_2024251.Persistence.MsSql\\Infrastructure\\Entities\\Crew.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAiwAsAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-21T12:13:24.428Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "DbContext.cs",
+              "DocumentMoniker": "C:\\Users\\polga\\source\\repos\\R6UHP1_HSZF_2024251\\R6UHP1_HSZF_2024251.Persistence.MsSql\\Infrastructure\\Contexts\\DbContext.cs",
+              "RelativeDocumentMoniker": "R6UHP1_HSZF_2024251.Persistence.MsSql\\Infrastructure\\Contexts\\DbContext.cs",
+              "ToolTip": "C:\\Users\\polga\\source\\repos\\R6UHP1_HSZF_2024251\\R6UHP1_HSZF_2024251.Persistence.MsSql\\Infrastructure\\Contexts\\DbContext.cs",
+              "RelativeToolTip": "R6UHP1_HSZF_2024251.Persistence.MsSql\\Infrastructure\\Contexts\\DbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-21T12:19:02.424Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "R6UHP1_HSZF_2024251.Persistence.MsSql",
+              "DocumentMoniker": "C:\\Users\\polga\\source\\repos\\R6UHP1_HSZF_2024251\\R6UHP1_HSZF_2024251.Persistence.MsSql\\R6UHP1_HSZF_2024251.Persistence.MsSql.csproj",
+              "RelativeDocumentMoniker": "R6UHP1_HSZF_2024251.Persistence.MsSql\\R6UHP1_HSZF_2024251.Persistence.MsSql.csproj",
+              "ToolTip": "C:\\Users\\polga\\source\\repos\\R6UHP1_HSZF_2024251\\R6UHP1_HSZF_2024251.Persistence.MsSql\\R6UHP1_HSZF_2024251.Persistence.MsSql.csproj",
+              "RelativeToolTip": "R6UHP1_HSZF_2024251.Persistence.MsSql\\R6UHP1_HSZF_2024251.Persistence.MsSql.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-11-21T12:14:33.474Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "Class1.cs",
               "DocumentMoniker": "C:\\Users\\polga\\source\\repos\\R6UHP1_HSZF_2024251\\R6UHP1_HSZF_2024251.Application\\Class1.cs",
               "RelativeDocumentMoniker": "R6UHP1_HSZF_2024251.Application\\Class1.cs",
