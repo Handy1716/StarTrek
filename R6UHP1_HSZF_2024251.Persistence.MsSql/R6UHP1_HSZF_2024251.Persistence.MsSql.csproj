@@ -7,6 +7,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="StarTrekData.xml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="StarTrekData.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Infrastructure\EntityTypeConfiguration\" />
     <Folder Include="Infrastructure\Migrations\" />
   </ItemGroup>

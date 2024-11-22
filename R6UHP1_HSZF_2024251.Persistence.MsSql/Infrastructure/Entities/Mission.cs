@@ -9,10 +9,10 @@ namespace R6UHP1_HSZF_2024251.Persistence.MsSql.Infrastructure.Entities
     public class Mission
     {
         public int Id { get; set; }
-        public int? TargetPlanetId { get; set; }
-        public int? SpaceShipId { get; set; }
-        public DateTime StartTime { get; set; }
-        public DateTime EndTime { get; set; }
+        public int? TargetPlanetId { get; set; } // Opcionális kapcsolat a Planet entitással
+        public int? SpaceShipId { get; set; } // Opcionális kapcsolat a SpaceShip entitással
+        public DateTime StartDate { get; set; }
+        public DateTime EndDate { get; set; }
         public string Status { get; set; }
 
         // Navigation Properties
