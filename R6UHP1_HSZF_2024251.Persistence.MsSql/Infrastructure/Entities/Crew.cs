@@ -12,9 +12,9 @@ namespace R6UHP1_HSZF_2024251.Persistence.MsSql.Infrastructure.Entities
         public string Name { get; set; }
         public string Rank { get; set; }
         public int SpaceShipId { get; set; }
+        public int MissionCount { get; set; }
 
         // Navigation Property
         public SpaceShip SpaceShip { get; set; }
-        public ICollection<Mission> Missions { get; set; }
     }
 }
