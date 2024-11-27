@@ -13,13 +13,14 @@ namespace R6UHP1_HSZF_2024251.Persistence.MsSql.Infrastructure.Contexts
     {
         // DbSet-ek az entitásokhoz
         public DbSet<SpaceShip> SpaceShips { get; set; }
-        public DbSet<Crew> Crew { get; set; }
+        public DbSet<CrewMember> CrewMembers { get; set; }
         public DbSet<Planet> Planets { get; set; }
         public DbSet<Mission> Missions { get; set; }
 
         // Konstruktor
         public StarTrekDbContext()
         {
+            Database.EnsureDeleted();
             Database.EnsureCreated(); // Létrehozza az adatbázist, ha még nem létezik
         }
 
@@ -31,11 +32,11 @@ namespace R6UHP1_HSZF_2024251.Persistence.MsSql.Infrastructure.Contexts
             base.OnConfiguring(optionsBuilder);
         }
 
-        // Model konfigurációk (pl. Fluent API)
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            // Itt lehet a relációkat, szabályokat definiálni (ha szükséges)
-            base.OnModelCreating(modelBuilder);
-        }
+        //// Model konfigurációk (pl. Fluent API)
+        //protected override void OnModelCreating(ModelBuilder modelBuilder)
+        //{
+        //    // Itt lehet a relációkat, szabályokat definiálni (ha szükséges)
+        //    base.OnModelCreating(modelBuilder);
+        //}
     }
 }

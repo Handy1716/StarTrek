@@ -1,5 +1,9 @@
 ﻿using R6UHP1_HSZF_2024251.Persistence.MsSql.Infrastructure.Contexts;
 using R6UHP1_HSZF_2024251.Persistence.MsSql.Infrastructure.Entities;
+using static R6UHP1_HSZF_2024251.Persistence.MsSql.Infrastructure.Entities.CrewMember;
+using static R6UHP1_HSZF_2024251.Persistence.MsSql.Infrastructure.Entities.Mission;
+using static R6UHP1_HSZF_2024251.Persistence.MsSql.Infrastructure.Entities.Planet;
+using static R6UHP1_HSZF_2024251.Persistence.MsSql.Infrastructure.Entities.SpaceShip;
 
 namespace R6UHP1_HSZF_2024251
 {
@@ -9,18 +13,18 @@ namespace R6UHP1_HSZF_2024251
         {
             using (var context = new StarTrekDbContext())
             {
-                var spaceship = new SpaceShip
+                var crewMember = new CrewMember
                 {
-                    Name = "USS Enterprise",
-                    Type = "Explorer",
-                    CrewCount = 100,
-                    Status = "Active"
+                    Name = "Spock",
+                    Rank = CrewMemberRank.Commander,
+                    SpaceShipId = 50,
+                    MissionCount = 1
                 };
 
-                context.SpaceShips.Add(spaceship);
+                context.CrewMembers.Add(crewMember);
                 context.SaveChanges();
 
-                Console.WriteLine("Űrhajó mentve az adatbázisba.");
+                Console.WriteLine("CrewMember tábla újra létrehozva és adat mentve.");
             }
         }
     }

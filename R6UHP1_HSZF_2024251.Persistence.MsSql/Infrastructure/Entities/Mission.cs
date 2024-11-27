@@ -21,10 +21,19 @@ namespace R6UHP1_HSZF_2024251.Persistence.MsSql.Infrastructure.Entities
         public DateTime? EndDate { get; set; }
 
         [Required]
-        [StringLength(100)]
-        public string Status { get; set; }
+        public MissionStatus Status { get; set; }
 
         // Navigation Properties
         public Planet TargetPlanet { get; set; }
+
+
+
+
+        public enum MissionStatus
+        {
+            InProgress,
+            Completed,
+            Failed
+        }
     }
 }
