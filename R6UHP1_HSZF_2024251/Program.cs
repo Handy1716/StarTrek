@@ -13,18 +13,35 @@ namespace R6UHP1_HSZF_2024251
         {
             using (var context = new StarTrekDbContext())
             {
+                // Hozz létre egy űrhajót, ha még nincs
+                var spaceship = context.SpaceShips.FirstOrDefault();
+                if (spaceship == null)
+                {
+                    spaceship = new SpaceShip
+                    {
+                        Name = "USS Enterprise",
+                        Type = SpaceShipType.Battleship,
+                        CrewCount = 0,
+                        Status = SpaceShipStatus.Active
+                    };
+
+                    context.SpaceShips.Add(spaceship);
+                    context.SaveChanges();
+                }
+
+                // Hozz létre egy legénységi tagot az űrhajóhoz
                 var crewMember = new CrewMember
                 {
                     Name = "Spock",
                     Rank = CrewMemberRank.Commander,
-                    SpaceShipId = 50,
-                    MissionCount = 1
+                    SpaceShipId = spaceship.Id, // Hozzárendelés az űrhajóhoz
+                    MissionCount = 5
                 };
 
                 context.CrewMembers.Add(crewMember);
                 context.SaveChanges();
 
-                Console.WriteLine("CrewMember tábla újra létrehozva és adat mentve.");
+                Console.WriteLine("CrewMember mentve az adatbázisba.");
             }
         }
     }
