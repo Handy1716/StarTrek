@@ -31,7 +31,6 @@
             <Id>1</Id>
             <TargetPlanetId>1</TargetPlanetId>
             <StartDate>2024-01-01</StartDate>
-            <EndDate>2024-01-10</EndDate>
             <Status>Completed</Status>
         </Mission>
     </Missions>
