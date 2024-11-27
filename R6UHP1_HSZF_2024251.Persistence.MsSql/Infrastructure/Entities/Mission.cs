@@ -18,7 +18,7 @@ namespace R6UHP1_HSZF_2024251.Persistence.MsSql.Infrastructure.Entities
         [Required]
         public DateTime StartDate { get; set; }
 
-        public DateTime EndDate { get; set; }
+        public DateTime? EndDate { get; set; }
 
         [Required]
         [StringLength(100)]

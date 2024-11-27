@@ -1,0 +1,12 @@
+C:\Users\polga\source\repos\R6UHP1_HSZF_2024251\R6UHP1_HSZF_2024251.Model\bin\Debug\net8.0\R6UHP1_HSZF_2024251.Model.deps.json
+C:\Users\polga\source\repos\R6UHP1_HSZF_2024251\R6UHP1_HSZF_2024251.Model\bin\Debug\net8.0\R6UHP1_HSZF_2024251.Model.dll
+C:\Users\polga\source\repos\R6UHP1_HSZF_2024251\R6UHP1_HSZF_2024251.Model\bin\Debug\net8.0\R6UHP1_HSZF_2024251.Model.pdb
+C:\Users\polga\source\repos\R6UHP1_HSZF_2024251\R6UHP1_HSZF_2024251.Model\obj\Debug\net8.0\R6UHP1_HSZF_2024251.Model.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\polga\source\repos\R6UHP1_HSZF_2024251\R6UHP1_HSZF_2024251.Model\obj\Debug\net8.0\R6UHP1_HSZF_2024251.Model.AssemblyInfoInputs.cache
+C:\Users\polga\source\repos\R6UHP1_HSZF_2024251\R6UHP1_HSZF_2024251.Model\obj\Debug\net8.0\R6UHP1_HSZF_2024251.Model.AssemblyInfo.cs
+C:\Users\polga\source\repos\R6UHP1_HSZF_2024251\R6UHP1_HSZF_2024251.Model\obj\Debug\net8.0\R6UHP1_HSZF_2024251.Model.csproj.CoreCompileInputs.cache
+C:\Users\polga\source\repos\R6UHP1_HSZF_2024251\R6UHP1_HSZF_2024251.Model\obj\Debug\net8.0\R6UHP1_HSZF_2024251.Model.sourcelink.json
+C:\Users\polga\source\repos\R6UHP1_HSZF_2024251\R6UHP1_HSZF_2024251.Model\obj\Debug\net8.0\R6UHP1_HSZF_2024251.Model.dll
+C:\Users\polga\source\repos\R6UHP1_HSZF_2024251\R6UHP1_HSZF_2024251.Model\obj\Debug\net8.0\refint\R6UHP1_HSZF_2024251.Model.dll
+C:\Users\polga\source\repos\R6UHP1_HSZF_2024251\R6UHP1_HSZF_2024251.Model\obj\Debug\net8.0\R6UHP1_HSZF_2024251.Model.pdb
+C:\Users\polga\source\repos\R6UHP1_HSZF_2024251\R6UHP1_HSZF_2024251.Model\obj\Debug\net8.0\ref\R6UHP1_HSZF_2024251.Model.dll

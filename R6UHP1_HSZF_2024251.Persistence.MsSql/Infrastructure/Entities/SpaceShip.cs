@@ -28,7 +28,6 @@ namespace R6UHP1_HSZF_2024251.Persistence.MsSql.Infrastructure.Entities
         [StringLength(100)]
         [Required]
         public string Status { get; set; }
-        [Required]
         public int? PlanetId { get; set; }
 
         // Navigation Property

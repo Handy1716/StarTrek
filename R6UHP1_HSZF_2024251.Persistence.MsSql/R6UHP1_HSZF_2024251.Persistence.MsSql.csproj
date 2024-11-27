@@ -17,6 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Infrastructure\Configurations\" />
     <Folder Include="Infrastructure\EntityTypeConfiguration\" />
     <Folder Include="Infrastructure\Migrations\" />
   </ItemGroup>
