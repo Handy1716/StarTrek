@@ -31,14 +31,16 @@ namespace R6UHP1_HSZF_2024251.Persistence.MsSql.Infrastructure.Entities
         public int? PlanetId { get; set; }
 
         // Navigation Property
-        public ICollection<Crew> CrewMembers { get; set; }
+        public ICollection<CrewMember> CrewMembers { get; set; }
+
+
+
+
         public enum SpaceShipStatus
         {
             Active,
             Inactive,
         }
-
-
         public enum SpaceShipType
         {
             Explorer,      // Felfedező űrhajók

@@ -11,7 +11,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace R6UHP1_HSZF_2024251.Persistence.MsSql.Infrastructure.Entities
 {
-    public class Crew
+    public class CrewMember
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -22,8 +22,7 @@ namespace R6UHP1_HSZF_2024251.Persistence.MsSql.Infrastructure.Entities
         public string Name { get; set; }
 
         [Required]
-        [StringLength(100)]
-        public string Rank { get; set; }
+        public CrewMemberRank Rank { get; set; }
 
         [Required]
         public int SpaceShipId { get; set; }
@@ -31,5 +30,15 @@ namespace R6UHP1_HSZF_2024251.Persistence.MsSql.Infrastructure.Entities
 
         // Navigation Property
         public SpaceShip SpaceShip { get; set; }
+
+
+        public enum CrewMemberRank
+        {
+            Captain,      // Kapitány
+            Commander,    // Parancsnok
+            Lieutenant,   // Hadnagy
+            Ensign,       // Zászlós
+            Cadet         // Kadét
+        }
     }
 }
