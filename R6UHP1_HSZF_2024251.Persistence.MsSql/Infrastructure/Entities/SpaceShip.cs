@@ -10,6 +10,8 @@ namespace R6UHP1_HSZF_2024251.Persistence.MsSql.Infrastructure.Entities
 {
     public class SpaceShip
     {
+
+
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
@@ -18,20 +20,34 @@ namespace R6UHP1_HSZF_2024251.Persistence.MsSql.Infrastructure.Entities
         [Required]
         public string Name { get; set; }
 
-        [StringLength(100)]
         [Required]
-        public string Type { get; set; }
+        public SpaceShipType Type { get; set; }
 
         [Required]
         public int CrewCount { get; set; }
 
-        [StringLength(100)]
         [Required]
-        public string Status { get; set; }
+        public SpaceShipStatus Status { get; set; }
         public int? PlanetId { get; set; }
 
         // Navigation Property
         public ICollection<Crew> CrewMembers { get; set; }
+        public enum SpaceShipStatus
+        {
+            Active,
+            Inactive,
+        }
+
+
+        public enum SpaceShipType
+        {
+            Explorer,      // Felfedező űrhajók
+            Fighter,       // Vadász űrhajók
+            Cargo,         // Teherhajók
+            Medical,       // Orvosi hajók
+            Research,      // Kutatóhajók
+            Battleship     // Csatahajók
+        }
     }
 
 }

@@ -18,15 +18,22 @@ namespace R6UHP1_HSZF_2024251.Persistence.MsSql.Infrastructure.Entities
         [StringLength(100)]
         public string Name { get; set; }
 
-        [Required]
         [StringLength(100)]
-        public string Type { get; set; }
+        public PlanetType Type { get; set; }
 
-        [Required]
         public int? ExplorationShipId { get; set; }
 
         // Navigation Property
         public SpaceShip? ExplorationShip { get; set; }
         public ICollection<Mission> Missions { get; set; }
+
+        public enum PlanetType
+        {
+            Terrestrial,
+            GasGiant,
+            IceGiant,
+            Dwarf,
+            Exotic
+        }
     }
 }
