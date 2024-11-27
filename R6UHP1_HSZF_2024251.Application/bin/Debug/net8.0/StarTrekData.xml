@@ -33,5 +33,12 @@
             <StartDate>2024-01-01</StartDate>
             <Status>Completed</Status>
         </Mission>
+      <Mission>
+        <Id>2</Id>
+        <TargetPlanetId>3</TargetPlanetId>
+        <StartDate>2024-01-01</StartDate>
+        <EndDate>2024-01-02</EndDate>
+        <Status>Completed</Status>
+      </Mission>
     </Missions>
 </StarTrekData>
