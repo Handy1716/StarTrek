@@ -18,10 +18,17 @@ namespace R6UHP1_HSZF_2024251.Persistence.MsSql.Infrastructure.Contexts
         public DbSet<Mission> Missions { get; set; }
 
         // Konstruktor
-        public StarTrekDbContext()
+        public StarTrekDbContext(bool resetDatabase = false)
         {
-            Database.EnsureDeleted();
-            Database.EnsureCreated(); // Létrehozza az adatbázist, ha még nem létezik
+            if (resetDatabase)
+            {
+                Database.EnsureDeleted();
+                Database.EnsureCreated();
+            }
+            else
+            {
+                Database.EnsureCreated();
+            }
         }
 
         // Kapcsolat beállítása

@@ -8,7 +8,7 @@
       <CrewCount>100</CrewCount>
       <Status>Active</Status>
       <PlanetId>1</PlanetId>
-    </Spaceship>
+    </Spaceship>  
     <Spaceship>
       <Id>2</Id>
       <Name>USS Enterprise2</Name>
@@ -23,6 +23,24 @@
       <Name>James T. Kirk</Name>
       <Rank>Captain</Rank>
       <SpaceshipId>1</SpaceshipId>
+    </CrewMember>
+    <CrewMember>
+      <Id>2</Id>
+      <Name>James T. Kirk</Name>
+      <Rank>Captain</Rank>
+      <SpaceshipId>1</SpaceshipId>
+    </CrewMember>
+    <CrewMember>
+      <Id>3</Id>
+      <Name>James T. Kirk</Name>
+      <Rank>Captain</Rank>
+      <SpaceshipId>1</SpaceshipId>
+    </CrewMember>
+    <CrewMember>
+      <Id>4</Id>
+      <Name>James T. Kirk</Name>
+      <Rank>Captain</Rank>
+      <SpaceshipId>2</SpaceshipId>
     </CrewMember>
   </CrewMembers>
   <Planets>

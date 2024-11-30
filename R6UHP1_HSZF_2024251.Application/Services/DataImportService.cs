@@ -65,7 +65,7 @@ namespace R6UHP1_HSZF_2024251.Persistence.MsSql.Infrastructure.Services
             }).ToList();
 
 
-            var context = new StarTrekDbContext();
+            var context = new StarTrekDbContext(true);
             spaceships.ForEach(ship =>
             {
                 context.SpaceShips.Add(ship);
