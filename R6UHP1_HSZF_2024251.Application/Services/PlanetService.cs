@@ -10,6 +10,11 @@ namespace R6UHP1_HSZF_2024251.Application.Services
 {
     public class PlanetService
     {
+        // Delegált az eseményhez
+        public delegate void OperationEventHandler(string message);
+
+        // Esemény definiálása
+        public event OperationEventHandler? OnOperationCompleted;
         // Create metódus: Új bolygó hozzáadása
         public void CreatePlanet(Planet newPlanet)
         {
@@ -19,11 +24,11 @@ namespace R6UHP1_HSZF_2024251.Application.Services
                 {
                     context.Planets.Add(newPlanet);
                     context.SaveChanges();
-                    Console.WriteLine("Planet created successfully.");
+                    OnOperationCompleted?.Invoke("Planet created successfully.");
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine($"Failed to create Planet: {ex.Message}");
+                    OnOperationCompleted?.Invoke($"Failed to create Planet: {ex.Message}");
                 }
             }
         }
@@ -46,16 +51,16 @@ namespace R6UHP1_HSZF_2024251.Application.Services
                         context.Planets.Remove(planet);
                         context.SaveChanges();
 
-                        Console.WriteLine("Planet and related Missions deleted successfully.");
+                        OnOperationCompleted?.Invoke("Planet and related Missions deleted successfully.");
                     }
                     catch (Exception ex)
                     {
-                        Console.WriteLine($"Failed to delete Planet: {ex.Message}");
+                        OnOperationCompleted?.Invoke($"Failed to delete Planet: {ex.Message}");
                     }
                 }
                 else
                 {
-                    Console.WriteLine("Planet not found.");
+                    OnOperationCompleted?.Invoke("Planet not found.");
                 }
             }
         }

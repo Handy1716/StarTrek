@@ -2,7 +2,6 @@
 using R6UHP1_HSZF_2024251.Persistence.MsSql.Infrastructure.Contexts;
 using R6UHP1_HSZF_2024251.Persistence.MsSql.Infrastructure.Entities;
 using R6UHP1_HSZF_2024251.Persistence.MsSql.Infrastructure.Services;
-
 using System.Xml.Linq;
 using static R6UHP1_HSZF_2024251.Persistence.MsSql.Infrastructure.Entities.CrewMember;
 using static R6UHP1_HSZF_2024251.Persistence.MsSql.Infrastructure.Entities.Mission;
@@ -16,21 +15,25 @@ namespace R6UHP1_HSZF_2024251.Console
         static void Main(string[] args)
         {
             ReadIn();
-            //var spaceShipService = new SpaceShipService();
+            var spaceShipService = new SpaceShipService();
             //var crewMemberService = new CrewMemberService();
             //var planetService = new PlanetService();
             //var missionService = new MissionService();
 
-            //var newSpaceShip = new SpaceShip
-            //{
-            //    Name = "USS Enterprise",
-            //    Type = SpaceShip.SpaceShipType.Fighter,
-            //    CrewCount = 1001,
-            //    Status = SpaceShip.SpaceShipStatus.Active,
-            //    PlanetId = null
-            //};
-            //spaceShipService.CreateSpaceShip(newSpaceShip);
-            //spaceShipService.DeleteSpaceShip(1);
+
+            spaceShipService.OnOperationCompleted += message =>
+            {
+                System.Console.WriteLine($"Event Message: {message}");
+            };
+            var newSpaceShip = new SpaceShip
+            {
+                Name = "USS Enterprise",
+                Type = SpaceShip.SpaceShipType.Fighter,
+                CrewCount = 1001,
+                Status = SpaceShip.SpaceShipStatus.Active,
+                PlanetId = null
+            };
+            spaceShipService.CreateSpaceShip(newSpaceShip);
 
             //var newCrewMember = new CrewMember
             //{

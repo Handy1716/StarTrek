@@ -10,6 +10,8 @@ namespace R6UHP1_HSZF_2024251.Application.Services
 {
     public class SpaceShipService
     {
+        public delegate void OperationEventHandler(string message);
+        public event OperationEventHandler? OnOperationCompleted;
         public void CreateSpaceShip(SpaceShip newSpaceShip)
         {
             using (var context = new StarTrekDbContext())
@@ -18,11 +20,37 @@ namespace R6UHP1_HSZF_2024251.Application.Services
                 {
                     context.SpaceShips.Add(newSpaceShip);
                     context.SaveChanges();
-                    Console.WriteLine("SpaceShip created successfully.");
+                    OnOperationCompleted?.Invoke("SpaceShip created successfully.");
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine($"Failed to create SpaceShip: {ex.Message}");
+                    OnOperationCompleted?.Invoke($"Failed to create SpaceShip: {ex.Message}");
+                }
+            }
+        }
+
+
+        public void UpdateSpaceShip(int spaceShipId, Action<SpaceShip> updateAction)
+        {
+            using (var context = new StarTrekDbContext())
+            {
+                var spaceShip = context.SpaceShips.Find(spaceShipId);
+                if (spaceShip != null)
+                {
+                    try
+                    {
+                        updateAction(spaceShip); // A frissítési logika kívülről érkezik
+                        context.SaveChanges();
+                        Console.WriteLine("SpaceShip updated successfully.");
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine($"Failed to update SpaceShip: {ex.Message}");
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("SpaceShip not found.");
                 }
             }
         }
