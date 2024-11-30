@@ -1,54 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <StarTrekData>
-    <Spaceships>
-        <Spaceship>
-            <Id>1</Id>
-            <Name>USS Enterprise</Name>
-            <Type>Explorer</Type>
-            <CrewCount>100</CrewCount>
-            <Status>Active</Status>
-            <PlanetId>1</PlanetId>
-        </Spaceship>
-      <Spaceship>
-            <Id>2</Id>
-            <Name>USS Enterprise2</Name>
-            <Type>Explorer</Type>
-            <CrewCount>12</CrewCount>
-            <Status>Active</Status>
-            <PlanetId>2</PlanetId>
-        </Spaceship>
-      <Spaceship>
-            <Id>3</Id>
-            <Name>USS Enterprise3</Name>
-            <Type>Explorer</Type>
-            <CrewCount>110</CrewCount>
-            <Status>Active</Status>
-            <PlanetId>3</PlanetId>
-        </Spaceship>
-    </Spaceships>
-    <CrewMembers>
-        <CrewMember>
-            <Id>1</Id>
-            <Name>James T. Kirk</Name>
-            <Rank>Captain</Rank>
-            <SpaceshipId>1</SpaceshipId>
-        </CrewMember>
-    </CrewMembers>
-    <Planets>
-        <Planet>
-            <Id>1</Id>
-            <Name>Earth</Name>
-            <Type>Terrestrial</Type>
-            <ExplorationShipId>1</ExplorationShipId>
-        </Planet>
-    </Planets>
-    <Missions>
-        <Mission>
-            <Id>1</Id>
-            <TargetPlanetId>1</TargetPlanetId>
-            <StartDate>2024-01-01</StartDate>
-            <EndDate>2024-01-10</EndDate>
-            <Status>Completed</Status>
-        </Mission>
-    </Missions>
+  <Spaceships>
+    <Spaceship>
+      <Id>1</Id>
+      <Name>USS Enterprise</Name>
+      <Type>Explorer</Type>
+      <CrewCount>100</CrewCount>
+      <Status>Active</Status>
+      <PlanetId>1</PlanetId>
+    </Spaceship>
+    <Spaceship>
+      <Id>2</Id>
+      <Name>USS Enterprise2</Name>
+      <Type>Explorer</Type>
+      <CrewCount>12</CrewCount>
+      <Status>Active</Status>
+    </Spaceship>
+  </Spaceships>
+  <CrewMembers>
+    <CrewMember>
+      <Id>1</Id>
+      <Name>James T. Kirk</Name>
+      <Rank>Captain</Rank>
+      <SpaceshipId>1</SpaceshipId>
+    </CrewMember>
+  </CrewMembers>
+  <Planets>
+    <Planet>
+      <Id>1</Id>
+      <Name>Earth</Name>
+      <Type>Terrestrial</Type>
+      <ExplorationShipId>1</ExplorationShipId>
+    </Planet>
+  <Planet>
+    <Id>2</Id>
+    <Name>Earth2</Name>
+    <Type>Terrestrial</Type>
+  </Planet>
+  </Planets>
+  <Missions>
+    <Mission>
+      <Id>1</Id>
+      <TargetPlanetId>1</TargetPlanetId>
+      <StartDate>2024-01-01</StartDate>
+      <EndDate>2024-01-10</EndDate>
+      <Status>Completed</Status>
+    </Mission>
+    <Mission>
+      <Id>2</Id>
+      <TargetPlanetId>1</TargetPlanetId>
+      <StartDate>2024-01-01</StartDate>
+      <Status>InProgress</Status>
+    </Mission>
+  </Missions>
 </StarTrekData>
