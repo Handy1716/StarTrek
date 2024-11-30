@@ -10,7 +10,13 @@ namespace R6UHP1_HSZF_2024251.Application.Services
 {
     public class MissionService
     {
-        // Create metódus: Új küldetés hozzáadása
+        // Delegált az eseményhez
+        public delegate void OperationEventHandler(string message);
+
+        // Esemény definiálása
+        public event OperationEventHandler? OnOperationCompleted;
+
+        // Create metódus: Új küldetés létrehozása
         public void CreateMission(Mission newMission)
         {
             using (var context = new StarTrekDbContext())
@@ -19,11 +25,11 @@ namespace R6UHP1_HSZF_2024251.Application.Services
                 {
                     context.Missions.Add(newMission);
                     context.SaveChanges();
-                    Console.WriteLine("Mission created successfully.");
+                    OnOperationCompleted?.Invoke("Mission created successfully.");
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine($"Failed to create Mission: {ex.Message}");
+                    OnOperationCompleted?.Invoke($"Failed to create Mission: {ex.Message}");
                 }
             }
         }
@@ -40,18 +46,52 @@ namespace R6UHP1_HSZF_2024251.Application.Services
                     {
                         context.Missions.Remove(mission);
                         context.SaveChanges();
-                        Console.WriteLine("Mission deleted successfully.");
+                        OnOperationCompleted?.Invoke("Mission deleted successfully.");
                     }
                     catch (Exception ex)
                     {
-                        Console.WriteLine($"Failed to delete Mission: {ex.Message}");
+                        OnOperationCompleted?.Invoke($"Failed to delete Mission: {ex.Message}");
                     }
                 }
                 else
                 {
-                    Console.WriteLine("Mission not found.");
+                    OnOperationCompleted?.Invoke("Mission not found.");
                 }
             }
         }
+        public void UpdateSpaceShip(int spaceShipId, Action<SpaceShip> updateAction)
+        {
+            using (var context = new StarTrekDbContext())
+            {
+                var spaceShip = context.SpaceShips.Find(spaceShipId);
+                if (spaceShip != null)
+                {
+                    try
+                    {
+                        updateAction(spaceShip); // Frissítési logika kívülről érkezik
+                        context.SaveChanges();
+                        OnOperationCompleted?.Invoke("SpaceShip updated successfully.");
+                    }
+                    catch (Exception ex)
+                    {
+                        OnOperationCompleted?.Invoke($"Failed to update SpaceShip: {ex.Message}");
+                    }
+                }
+                else
+                {
+                    OnOperationCompleted?.Invoke("SpaceShip not found.");
+                }
+            }
+        }
+        public List<Mission> GetMissionsByStatus(Mission.MissionStatus status)
+        {
+            using (var context = new StarTrekDbContext())
+            {
+                return context.Missions
+                    .Where(m => m.Status == status)
+                    .ToList();
+            }
+        }
     }
+
 }

@@ -7,19 +7,11 @@
       "RelativeMoniker": "D:0:0:{6938C73C-D344-40CB-815A-06EC277CEE05}|R6UHP1_HSZF_2024251\\R6UHP1_HSZF_2024251.Console.csproj|solutionrelative:r6uhp1_hszf_2024251\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/StarTrekDB/True/SqlTable/dbo.SpaceShips.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BACCF1F6-B7E6-42F5-AD1E-EBE1C3042DE8}|R6UHP1_HSZF_2024251.Application\\R6UHP1_HSZF_2024251.Application.csproj|c:\\users\\polga\\source\\repos\\r6uhp1_hszf_2024251\\r6uhp1_hszf_2024251.application\\services\\dataimportservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BACCF1F6-B7E6-42F5-AD1E-EBE1C3042DE8}|R6UHP1_HSZF_2024251.Application\\R6UHP1_HSZF_2024251.Application.csproj|solutionrelative:r6uhp1_hszf_2024251.application\\services\\dataimportservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{BACCF1F6-B7E6-42F5-AD1E-EBE1C3042DE8}|R6UHP1_HSZF_2024251.Application\\R6UHP1_HSZF_2024251.Application.csproj|c:\\users\\polga\\source\\repos\\r6uhp1_hszf_2024251\\r6uhp1_hszf_2024251.application\\services\\spaceshipservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BACCF1F6-B7E6-42F5-AD1E-EBE1C3042DE8}|R6UHP1_HSZF_2024251.Application\\R6UHP1_HSZF_2024251.Application.csproj|solutionrelative:r6uhp1_hszf_2024251.application\\services\\spaceshipservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BACCF1F6-B7E6-42F5-AD1E-EBE1C3042DE8}|R6UHP1_HSZF_2024251.Application\\R6UHP1_HSZF_2024251.Application.csproj|c:\\users\\polga\\source\\repos\\r6uhp1_hszf_2024251\\r6uhp1_hszf_2024251.application\\services\\crewmemberservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BACCF1F6-B7E6-42F5-AD1E-EBE1C3042DE8}|R6UHP1_HSZF_2024251.Application\\R6UHP1_HSZF_2024251.Application.csproj|solutionrelative:r6uhp1_hszf_2024251.application\\services\\crewmemberservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/StarTrekDB/True/SqlTable/dbo.SpaceShips.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BACCF1F6-B7E6-42F5-AD1E-EBE1C3042DE8}|R6UHP1_HSZF_2024251.Application\\R6UHP1_HSZF_2024251.Application.csproj|c:\\users\\polga\\source\\repos\\r6uhp1_hszf_2024251\\r6uhp1_hszf_2024251.application\\services\\planetservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -28,6 +20,14 @@
     {
       "AbsoluteMoniker": "D:0:0:{BACCF1F6-B7E6-42F5-AD1E-EBE1C3042DE8}|R6UHP1_HSZF_2024251.Application\\R6UHP1_HSZF_2024251.Application.csproj|c:\\users\\polga\\source\\repos\\r6uhp1_hszf_2024251\\r6uhp1_hszf_2024251.application\\services\\missionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BACCF1F6-B7E6-42F5-AD1E-EBE1C3042DE8}|R6UHP1_HSZF_2024251.Application\\R6UHP1_HSZF_2024251.Application.csproj|solutionrelative:r6uhp1_hszf_2024251.application\\services\\missionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BACCF1F6-B7E6-42F5-AD1E-EBE1C3042DE8}|R6UHP1_HSZF_2024251.Application\\R6UHP1_HSZF_2024251.Application.csproj|c:\\users\\polga\\source\\repos\\r6uhp1_hszf_2024251\\r6uhp1_hszf_2024251.application\\services\\crewmemberservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BACCF1F6-B7E6-42F5-AD1E-EBE1C3042DE8}|R6UHP1_HSZF_2024251.Application\\R6UHP1_HSZF_2024251.Application.csproj|solutionrelative:r6uhp1_hszf_2024251.application\\services\\crewmemberservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BACCF1F6-B7E6-42F5-AD1E-EBE1C3042DE8}|R6UHP1_HSZF_2024251.Application\\R6UHP1_HSZF_2024251.Application.csproj|c:\\users\\polga\\source\\repos\\r6uhp1_hszf_2024251\\r6uhp1_hszf_2024251.application\\services\\dataimportservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BACCF1F6-B7E6-42F5-AD1E-EBE1C3042DE8}|R6UHP1_HSZF_2024251.Application\\R6UHP1_HSZF_2024251.Application.csproj|solutionrelative:r6uhp1_hszf_2024251.application\\services\\dataimportservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -49,72 +49,72 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 4,
               "Title": "MissionService.cs",
               "DocumentMoniker": "C:\\Users\\polga\\source\\repos\\R6UHP1_HSZF_2024251\\R6UHP1_HSZF_2024251.Application\\Services\\MissionService.cs",
               "RelativeDocumentMoniker": "R6UHP1_HSZF_2024251.Application\\Services\\MissionService.cs",
               "ToolTip": "C:\\Users\\polga\\source\\repos\\R6UHP1_HSZF_2024251\\R6UHP1_HSZF_2024251.Application\\Services\\MissionService.cs",
               "RelativeToolTip": "R6UHP1_HSZF_2024251.Application\\Services\\MissionService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADcAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAACoAAAAAAAAAAAAYwFQAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-30T18:57:42.147Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 3,
               "Title": "PlanetService.cs",
               "DocumentMoniker": "C:\\Users\\polga\\source\\repos\\R6UHP1_HSZF_2024251\\R6UHP1_HSZF_2024251.Application\\Services\\PlanetService.cs",
               "RelativeDocumentMoniker": "R6UHP1_HSZF_2024251.Application\\Services\\PlanetService.cs",
               "ToolTip": "C:\\Users\\polga\\source\\repos\\R6UHP1_HSZF_2024251\\R6UHP1_HSZF_2024251.Application\\Services\\PlanetService.cs",
               "RelativeToolTip": "R6UHP1_HSZF_2024251.Application\\Services\\PlanetService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAoAAAAAAAAAA==",
+              "ViewState": "AgIAADsAAAAAAAAAAAAYwFkAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-30T18:55:52.83Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "CrewMemberService.cs",
               "DocumentMoniker": "C:\\Users\\polga\\source\\repos\\R6UHP1_HSZF_2024251\\R6UHP1_HSZF_2024251.Application\\Services\\CrewMemberService.cs",
               "RelativeDocumentMoniker": "R6UHP1_HSZF_2024251.Application\\Services\\CrewMemberService.cs",
               "ToolTip": "C:\\Users\\polga\\source\\repos\\R6UHP1_HSZF_2024251\\R6UHP1_HSZF_2024251.Application\\Services\\CrewMemberService.cs",
               "RelativeToolTip": "R6UHP1_HSZF_2024251.Application\\Services\\CrewMemberService.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAQwDYAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAADwAAAAAAAAAAAAYwFQAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-30T18:41:21.127Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
               "Title": "DataImportService.cs",
               "DocumentMoniker": "C:\\Users\\polga\\source\\repos\\R6UHP1_HSZF_2024251\\R6UHP1_HSZF_2024251.Application\\Services\\DataImportService.cs",
               "RelativeDocumentMoniker": "R6UHP1_HSZF_2024251.Application\\Services\\DataImportService.cs",
               "ToolTip": "C:\\Users\\polga\\source\\repos\\R6UHP1_HSZF_2024251\\R6UHP1_HSZF_2024251.Application\\Services\\DataImportService.cs",
               "RelativeToolTip": "R6UHP1_HSZF_2024251.Application\\Services\\DataImportService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAABAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-30T18:15:09.18Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "SpaceShipService.cs",
               "DocumentMoniker": "C:\\Users\\polga\\source\\repos\\R6UHP1_HSZF_2024251\\R6UHP1_HSZF_2024251.Application\\Services\\SpaceShipService.cs",
               "RelativeDocumentMoniker": "R6UHP1_HSZF_2024251.Application\\Services\\SpaceShipService.cs",
               "ToolTip": "C:\\Users\\polga\\source\\repos\\R6UHP1_HSZF_2024251\\R6UHP1_HSZF_2024251.Application\\Services\\SpaceShipService.cs",
               "RelativeToolTip": "R6UHP1_HSZF_2024251.Application\\Services\\SpaceShipService.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAQwBgAAAAkAAAAAAAAAA==",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAQwAsAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-30T16:51:34.289Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "dbo.SpaceShips [Data]",
               "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/StarTrekDB/True/SqlTable/dbo.SpaceShips.sql",
               "ToolTip": "dbo.SpaceShips [Data]",
@@ -130,7 +130,7 @@
               "RelativeDocumentMoniker": "R6UHP1_HSZF_2024251\\Program.cs",
               "ToolTip": "C:\\Users\\polga\\source\\repos\\R6UHP1_HSZF_2024251\\R6UHP1_HSZF_2024251\\Program.cs",
               "RelativeToolTip": "R6UHP1_HSZF_2024251\\Program.cs",
-              "ViewState": "AgIAABQAAAAAAAAAAAAcwCUAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABIAAAAAAAAAAAAuwCMAAABFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-30T16:56:57.814Z",
               "EditorCaption": ""

@@ -16,9 +16,6 @@ namespace R6UHP1_HSZF_2024251.Console
         {
             ReadIn();
             var spaceShipService = new SpaceShipService();
-            //var crewMemberService = new CrewMemberService();
-            //var planetService = new PlanetService();
-            //var missionService = new MissionService();
 
 
             spaceShipService.OnOperationCompleted += message =>
@@ -33,7 +30,22 @@ namespace R6UHP1_HSZF_2024251.Console
                 Status = SpaceShip.SpaceShipStatus.Active,
                 PlanetId = null
             };
+            spaceShipService.UpdateSpaceShip(1, spaceShip =>
+            {
+                spaceShip.Name = "USS Enterprise-D"; // Új név
+                spaceShip.Status = SpaceShip.SpaceShipStatus.Inactive; // Új státusz
+            });
             spaceShipService.CreateSpaceShip(newSpaceShip);
+            //spaceShipService.DeleteSpaceShip(1);
+
+
+
+            //var crewMemberService = new CrewMemberService();
+            //var planetService = new PlanetService();
+            //var missionService = new MissionService();
+
+
+
 
             //var newCrewMember = new CrewMember
             //{

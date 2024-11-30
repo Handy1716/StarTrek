@@ -64,6 +64,30 @@ namespace R6UHP1_HSZF_2024251.Application.Services
                 }
             }
         }
+        public void UpdatePlanet(int planetId, Action<Planet> updateAction)
+        {
+            using (var context = new StarTrekDbContext())
+            {
+                var planet = context.Planets.Find(planetId);
+                if (planet != null)
+                {
+                    try
+                    {
+                        updateAction(planet); // Frissítési logika kívülről érkezik
+                        context.SaveChanges();
+                        OnOperationCompleted?.Invoke("Planet updated successfully.");
+                    }
+                    catch (Exception ex)
+                    {
+                        OnOperationCompleted?.Invoke($"Failed to update Planet: {ex.Message}");
+                    }
+                }
+                else
+                {
+                    OnOperationCompleted?.Invoke("Planet not found.");
+                }
+            }
+        }
     }
 }
 

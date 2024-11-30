@@ -85,6 +85,25 @@ namespace R6UHP1_HSZF_2024251.Application.Services
             }
         }
 
+        public List<SpaceShip> GetSpaceShipsByName(string name)
+        {
+            using (var context = new StarTrekDbContext())
+            {
+                return context.SpaceShips
+                    .Where(s => s.Name.Contains(name))
+                    .ToList();
+            }
+        }
+        public List<SpaceShip> GetSpaceShipsByStatus(SpaceShip.SpaceShipStatus status)
+        {
+            using (var context = new StarTrekDbContext())
+            {
+                return context.SpaceShips
+                    .Where(s => s.Status == status)
+                    .ToList();
+            }
+        }
+
 
     }
 }

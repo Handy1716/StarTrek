@@ -10,7 +10,13 @@ namespace R6UHP1_HSZF_2024251.Application.Services
 {
     public class CrewMemberService
     {
-        // Create metódus: Új legénységi tag hozzáadása
+        // Delegált az eseményhez
+        public delegate void OperationEventHandler(string message);
+
+        // Esemény definiálása
+        public event OperationEventHandler? OnOperationCompleted;
+
+        // Create metódus: Új legénységi tag létrehozása
         public void CreateCrewMember(CrewMember newCrewMember)
         {
             using (var context = new StarTrekDbContext())
@@ -19,16 +25,16 @@ namespace R6UHP1_HSZF_2024251.Application.Services
                 {
                     context.CrewMembers.Add(newCrewMember);
                     context.SaveChanges();
-                    Console.WriteLine("CrewMember created successfully.");
+                    OnOperationCompleted?.Invoke("CrewMember created successfully.");
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine($"Failed to create CrewMember: {ex.Message}");
+                    OnOperationCompleted?.Invoke($"Failed to create CrewMember: {ex.Message}");
                 }
             }
         }
 
-        // Delete metódus: Egy legénységi tag törlése
+        // Delete metódus: Legénységi tag törlése
         public void DeleteCrewMember(int crewMemberId)
         {
             using (var context = new StarTrekDbContext())
@@ -40,19 +46,61 @@ namespace R6UHP1_HSZF_2024251.Application.Services
                     {
                         context.CrewMembers.Remove(crewMember);
                         context.SaveChanges();
-                        Console.WriteLine("CrewMember deleted successfully.");
+                        OnOperationCompleted?.Invoke("CrewMember deleted successfully.");
                     }
                     catch (Exception ex)
                     {
-                        Console.WriteLine($"Failed to delete CrewMember: {ex.Message}");
+                        OnOperationCompleted?.Invoke($"Failed to delete CrewMember: {ex.Message}");
                     }
                 }
                 else
                 {
-                    Console.WriteLine("CrewMember not found.");
+                    OnOperationCompleted?.Invoke("CrewMember not found.");
                 }
             }
         }
+        public void UpdateCrewMember(int crewMemberId, Action<CrewMember> updateAction)
+        {
+            using (var context = new StarTrekDbContext())
+            {
+                var crewMember = context.CrewMembers.Find(crewMemberId);
+                if (crewMember != null)
+                {
+                    try
+                    {
+                        updateAction(crewMember); // Frissítési logika kívülről érkezik
+                        context.SaveChanges();
+                        OnOperationCompleted?.Invoke("CrewMember updated successfully.");
+                    }
+                    catch (Exception ex)
+                    {
+                        OnOperationCompleted?.Invoke($"Failed to update CrewMember: {ex.Message}");
+                    }
+                }
+                else
+                {
+                    OnOperationCompleted?.Invoke("CrewMember not found.");
+                }
+            }
+        }
+        public List<CrewMember> GetCrewMembersByName(string name)
+        {
+            using (var context = new StarTrekDbContext())
+            {
+                return context.CrewMembers
+                    .Where(cm => cm.Name.Contains(name))
+                    .ToList();
+            }
+        }
 
+        public List<CrewMember> GetCrewMembersByRank(CrewMember.CrewMemberRank rank)
+        {
+            using (var context = new StarTrekDbContext())
+            {
+                return context.CrewMembers
+                    .Where(cm => cm.Rank == rank)
+                    .ToList();
+            }
+        }
     }
 }
