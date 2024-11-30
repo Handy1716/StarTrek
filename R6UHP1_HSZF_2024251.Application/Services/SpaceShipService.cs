@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace R6UHP1_HSZF_2024251.Application.Services
 {
-    public class SpaceShipService
+    public class SpaceShipService : BaseService
     {
         public delegate void OperationEventHandler(string message);
         public event OperationEventHandler? OnOperationCompleted;
@@ -84,6 +84,13 @@ namespace R6UHP1_HSZF_2024251.Application.Services
                 }
             }
         }
+        public List<SpaceShip> GetAllSpaceShips()
+        {
+            using (var context = new StarTrekDbContext())
+            {
+                return context.SpaceShips.ToList();
+            }
+        }
 
         public List<SpaceShip> GetSpaceShipsByName(string name)
         {
@@ -101,6 +108,27 @@ namespace R6UHP1_HSZF_2024251.Application.Services
                 return context.SpaceShips
                     .Where(s => s.Status == status)
                     .ToList();
+            }
+        }
+        public List<SpaceShip> GetPagedSpaceShipsByStatus(SpaceShip.SpaceShipStatus status, int pageNumber, int pageSize)
+        {
+            using (var context = new StarTrekDbContext())
+            {
+                var query = context.SpaceShips
+                    .Where(s => s.Status == status)
+                    .OrderBy(s => s.Name);
+
+                return GetPagedResults(query, pageNumber, pageSize);
+            }
+        }
+
+
+        public List<SpaceShip> GetPagedSpaceShips(int pageNumber, int pageSize)
+        {
+            using (var context = new StarTrekDbContext())
+            {
+                var query = context.SpaceShips.OrderBy(s => s.Name);
+                return GetPagedResults(query, pageNumber, pageSize);
             }
         }
 

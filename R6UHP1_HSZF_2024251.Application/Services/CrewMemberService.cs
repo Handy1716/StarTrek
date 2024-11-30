@@ -83,6 +83,13 @@ namespace R6UHP1_HSZF_2024251.Application.Services
                 }
             }
         }
+        public List<CrewMember> GetAllCrewMembers()
+        {
+            using (var context = new StarTrekDbContext())
+            {
+                return context.CrewMembers.ToList();
+            }
+        }
         public List<CrewMember> GetCrewMembersByName(string name)
         {
             using (var context = new StarTrekDbContext())

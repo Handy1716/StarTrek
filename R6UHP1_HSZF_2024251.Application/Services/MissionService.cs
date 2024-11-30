@@ -83,6 +83,13 @@ namespace R6UHP1_HSZF_2024251.Application.Services
                 }
             }
         }
+        public List<Mission> GetAllMissions()
+        {
+            using (var context = new StarTrekDbContext())
+            {
+                return context.Missions.ToList();
+            }
+        }
         public List<Mission> GetMissionsByStatus(Mission.MissionStatus status)
         {
             using (var context = new StarTrekDbContext())

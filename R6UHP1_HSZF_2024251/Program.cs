@@ -16,26 +16,32 @@ namespace R6UHP1_HSZF_2024251.Console
         {
             ReadIn();
             var spaceShipService = new SpaceShipService();
+            var activeShips = spaceShipService.GetSpaceShipsByStatus(SpaceShip.SpaceShipStatus.Active);
+            Paged();
+            //foreach (var ship in activeShips)
+            //{
+            //    System.Console.WriteLine($"Active Ship: {ship.Id} {ship.Name}");
+            //}
+     
 
-
-            spaceShipService.OnOperationCompleted += message =>
-            {
-                System.Console.WriteLine($"Event Message: {message}");
-            };
-            var newSpaceShip = new SpaceShip
-            {
-                Name = "USS Enterprise",
-                Type = SpaceShip.SpaceShipType.Fighter,
-                CrewCount = 1001,
-                Status = SpaceShip.SpaceShipStatus.Active,
-                PlanetId = null
-            };
-            spaceShipService.UpdateSpaceShip(1, spaceShip =>
-            {
-                spaceShip.Name = "USS Enterprise-D"; // Új név
-                spaceShip.Status = SpaceShip.SpaceShipStatus.Inactive; // Új státusz
-            });
-            spaceShipService.CreateSpaceShip(newSpaceShip);
+            //spaceShipService.OnOperationCompleted += message =>
+            //{
+            //    System.Console.WriteLine($"Event Message: {message}");
+            //};
+            //var newSpaceShip = new SpaceShip
+            //{
+            //    Name = "USS Enterprise",
+            //    Type = SpaceShip.SpaceShipType.Fighter,
+            //    CrewCount = 1001,
+            //    Status = SpaceShip.SpaceShipStatus.Active,
+            //    PlanetId = null
+            //};
+            //spaceShipService.UpdateSpaceShip(1, spaceShip =>
+            //{
+            //    spaceShip.Name = "USS Enterprise-D"; // Új név
+            //    spaceShip.Status = SpaceShip.SpaceShipStatus.Inactive; // Új státusz
+            //});
+            //spaceShipService.CreateSpaceShip(newSpaceShip);
             //spaceShipService.DeleteSpaceShip(1);
 
 
@@ -82,6 +88,67 @@ namespace R6UHP1_HSZF_2024251.Console
         {
             var importService = new DataImportService();
             importService.ReadIn();
+        }
+        public static void Paged()
+        {
+            var spaceShipService = new SpaceShipService();
+            var crewMemberService = new CrewMemberService();
+            var missionService = new MissionService();
+            var currentPage = 1;
+            var totalPages = 3;
+
+            while (true)
+            {
+                
+                System.Console.Clear();
+                System.Console.WriteLine($"Page {currentPage}/{totalPages}");
+
+                switch (currentPage)
+                {
+                    case 1:
+                        System.Console.WriteLine("SpaceShips:");
+                        var spaceShips = spaceShipService.GetAllSpaceShips(); // Összes űrhajó lekérdezése
+                        foreach (var ship in spaceShips)
+                        {
+                            System.Console.WriteLine($"- {ship.Name} (Status: {ship.Status})");
+                        }
+                        break;
+
+                    case 2:
+                        System.Console.WriteLine("CrewMembers:");
+                        var crewMembers = crewMemberService.GetAllCrewMembers(); // Összes legénységi tag lekérdezése
+                        foreach (var member in crewMembers)
+                        {
+                            System.Console.WriteLine($"- {member.Name} (Rank: {member.Rank})");
+                        }
+                        break;
+
+                    case 3:
+                        System.Console.WriteLine("Missions:");
+                        var missions = missionService.GetAllMissions(); // Összes küldetés lekérdezése
+                        foreach (var mission in missions)
+                        {
+                            System.Console.WriteLine($"- Mission to Planet {mission.TargetPlanetId} (Status: {mission.Status})");
+                        }
+                        break;
+                }
+
+                System.Console.WriteLine("\nPress 'n' for next page, 'p' for previous page, or any other key to exit.");
+                var input = System.Console.ReadLine();
+
+                if (input == "n" && currentPage < totalPages)
+                {
+                    currentPage++;
+                }
+                else if (input == "p" && currentPage > 1)
+                {
+                    currentPage--;
+                }
+                else
+                {
+                    break;
+                }
+            }
         }
 
     }

@@ -14,7 +14,23 @@
       <Name>USS Enterprise2</Name>
       <Type>Explorer</Type>
       <CrewCount>12</CrewCount>
+      <Status>Inactive</Status>
+    </Spaceship>
+    <Spaceship>
+      <Id>3</Id>
+      <Name>USS Enterprise</Name>
+      <Type>Explorer</Type>
+      <CrewCount>100</CrewCount>
       <Status>Active</Status>
+      <PlanetId>1</PlanetId>
+    </Spaceship>
+    <Spaceship>
+      <Id>4</Id>
+      <Name>USS Enterprise</Name>
+      <Type>Explorer</Type>
+      <CrewCount>100</CrewCount>
+      <Status>Active</Status>
+      <PlanetId>1</PlanetId>
     </Spaceship>
   </Spaceships>
   <CrewMembers>
@@ -26,19 +42,19 @@
     </CrewMember>
     <CrewMember>
       <Id>2</Id>
-      <Name>James T. Kirk</Name>
+      <Name>Feri</Name>
       <Rank>Captain</Rank>
       <SpaceshipId>1</SpaceshipId>
     </CrewMember>
     <CrewMember>
       <Id>3</Id>
-      <Name>James T. Kirk</Name>
+      <Name>Feri</Name>
       <Rank>Captain</Rank>
       <SpaceshipId>1</SpaceshipId>
     </CrewMember>
     <CrewMember>
       <Id>4</Id>
-      <Name>James T. Kirk</Name>
+      <Name>Feri</Name>
       <Rank>Captain</Rank>
       <SpaceshipId>2</SpaceshipId>
     </CrewMember>
