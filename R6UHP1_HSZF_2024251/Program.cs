@@ -16,7 +16,21 @@ namespace R6UHP1_HSZF_2024251.Console
         {
             ReadIn();
             var spaceShipService = new SpaceShipService();
+            string reportPath = "SpaceShipReport.xml";
+
+            // Riport generálása
+            spaceShipService.GenerateSpaceShipReport(reportPath);
             var activeShips = spaceShipService.GetSpaceShipsByStatus(SpaceShip.SpaceShipStatus.Active);
+
+
+            var missionService = new MissionService();
+
+            // Riport fájl elérési útja
+            string missionReportPath = "MissionReport.txt";
+
+            // Riport generálása
+            missionService.GenerateMissionReport(missionReportPath);
+
             Paged();
             //foreach (var ship in activeShips)
             //{

@@ -1,0 +1,14 @@
+Mission Report - Completed Missions in the Last Year
+---------------------------------------------------
+Mission ID: 1
+Target Planet ID: 1
+Start Date: 2024. 01. 01. 0:00:00
+End Date: 2024. 01. 10. 0:00:00
+Status: Completed
+---------------------------------------------------
+Mission ID: 4
+Target Planet ID: 1
+Start Date: 2024. 01. 01. 0:00:00
+End Date: 2024. 01. 11. 0:00:00
+Status: Completed
+---------------------------------------------------

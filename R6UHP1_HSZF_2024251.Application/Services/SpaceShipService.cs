@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace R6UHP1_HSZF_2024251.Application.Services
 {
@@ -82,6 +83,35 @@ namespace R6UHP1_HSZF_2024251.Application.Services
                 {
                     Console.WriteLine("SpaceShip not found.");
                 }
+            }
+        }
+        public void GenerateSpaceShipReport(string filePath)
+        {
+            using (var context = new StarTrekDbContext())
+            {
+                // Lekérjük az összes űrhajót az adatbázisból
+                var spaceShips = context.SpaceShips.ToList();
+
+                // XML fájl generálása
+                var xDocument = new XDocument(
+                    new XElement("SpaceShips",
+                        spaceShips.Select(ship =>
+                            new XElement("SpaceShip",
+                                new XElement("Id", ship.Id),
+                                new XElement("Name", ship.Name),
+                                new XElement("Type", ship.Type.ToString()),
+                                new XElement("CrewCount", ship.CrewCount),
+                                new XElement("Status", ship.Status.ToString()),
+                                new XElement("PlanetId", ship.PlanetId.HasValue ? ship.PlanetId.ToString() : "null")
+                            )
+                        )
+                    )
+                );
+
+                // Fájl mentése
+                xDocument.Save(filePath);
+
+                Console.WriteLine($"Report generated successfully at: {filePath}");
             }
         }
         public List<SpaceShip> GetAllSpaceShips()

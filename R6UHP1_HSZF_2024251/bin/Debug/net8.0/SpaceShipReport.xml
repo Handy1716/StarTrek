@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SpaceShips>
+  <SpaceShip>
+    <Id>1</Id>
+    <Name>USS Enterprise</Name>
+    <Type>Explorer</Type>
+    <CrewCount>100</CrewCount>
+    <Status>Active</Status>
+    <PlanetId>1</PlanetId>
+  </SpaceShip>
+  <SpaceShip>
+    <Id>2</Id>
+    <Name>USS Enterprise2</Name>
+    <Type>Explorer</Type>
+    <CrewCount>12</CrewCount>
+    <Status>Inactive</Status>
+    <PlanetId>null</PlanetId>
+  </SpaceShip>
+  <SpaceShip>
+    <Id>3</Id>
+    <Name>USS Enterprise</Name>
+    <Type>Explorer</Type>
+    <CrewCount>100</CrewCount>
+    <Status>Active</Status>
+    <PlanetId>1</PlanetId>
+  </SpaceShip>
+  <SpaceShip>
+    <Id>4</Id>
+    <Name>USS Enterprise</Name>
+    <Type>Explorer</Type>
+    <CrewCount>100</CrewCount>
+    <Status>Active</Status>
+    <PlanetId>1</PlanetId>
+  </SpaceShip>
+</SpaceShips>

@@ -86,5 +86,19 @@
       <StartDate>2024-01-01</StartDate>
       <Status>InProgress</Status>
     </Mission>
+    <Mission>
+      <Id>3</Id>
+      <TargetPlanetId>1</TargetPlanetId>
+      <StartDate>2023-01-01</StartDate>
+      <EndDate>2023-01-10</EndDate>
+      <Status>Completed</Status>
+    </Mission>
+    <Mission>
+      <Id>4</Id>
+      <TargetPlanetId>1</TargetPlanetId>
+      <StartDate>2024-01-01</StartDate>
+      <EndDate>2024-01-11</EndDate>
+      <Status>Completed</Status>
+    </Mission>
   </Missions>
 </StarTrekData>

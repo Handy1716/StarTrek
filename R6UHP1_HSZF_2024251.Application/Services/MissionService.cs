@@ -83,6 +83,44 @@ namespace R6UHP1_HSZF_2024251.Application.Services
                 }
             }
         }
+        public void GenerateMissionReport(string filePath)
+        {
+            using (var context = new StarTrekDbContext())
+            {
+                // Az aktuális év
+                var oneYearAgo = DateTime.Now.AddYears(-1);
+
+                // Lekérjük az elmúlt évben végrehajtott küldetéseket
+                var completedMissions = context.Missions
+                    .Where(m => m.Status == Mission.MissionStatus.Completed && m.EndDate.HasValue && m.EndDate.Value > oneYearAgo)
+                    .OrderBy(m => m.EndDate)
+                    .ToList();
+
+                // Riport generálása szöveges formában
+                var reportLines = new List<string>
+        {
+            "Mission Report - Completed Missions in the Last Year",
+            "---------------------------------------------------"
+        };
+
+                foreach (var mission in completedMissions)
+                {
+                    reportLines.Add($"Mission ID: {mission.Id}");
+                    reportLines.Add($"Target Planet ID: {mission.TargetPlanetId}");
+                    reportLines.Add($"Start Date: {mission.StartDate}");
+                    reportLines.Add($"End Date: {mission.EndDate}");
+                    reportLines.Add($"Status: {mission.Status}");
+                    reportLines.Add("---------------------------------------------------");
+                }
+
+                // TXT fájl mentése
+                File.WriteAllLines(filePath, reportLines);
+
+                Console.WriteLine($"Report generated successfully at: {filePath}");
+            }
+        }
+
+
         public List<Mission> GetAllMissions()
         {
             using (var context = new StarTrekDbContext())

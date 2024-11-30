@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("R6UHP1_HSZF_2024251.Application")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c8cd4aecfd6e609f99f577b13180038e4dd78f92")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b8e4801c639306243308eb886f2953fa836bf85f")]
 [assembly: System.Reflection.AssemblyProductAttribute("R6UHP1_HSZF_2024251.Application")]
 [assembly: System.Reflection.AssemblyTitleAttribute("R6UHP1_HSZF_2024251.Application")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
