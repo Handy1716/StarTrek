@@ -8,10 +8,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="StarTrekData - Copy.xml" />
     <None Remove="StarTrekData.xml" />
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="StarTrekData - Copy.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="StarTrekData.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
