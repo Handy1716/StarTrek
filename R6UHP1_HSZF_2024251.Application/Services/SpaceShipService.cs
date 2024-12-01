@@ -1,4 +1,5 @@
-﻿using R6UHP1_HSZF_2024251.Persistence.MsSql.Infrastructure.Contexts;
+﻿using R6UHP1_HSZF_2024251.Persistence.MsSql.Infrastructure.Atributes;
+using R6UHP1_HSZF_2024251.Persistence.MsSql.Infrastructure.Contexts;
 using R6UHP1_HSZF_2024251.Persistence.MsSql.Infrastructure.Entities;
 using System;
 using System.Collections.Generic;
@@ -113,6 +114,38 @@ namespace R6UHP1_HSZF_2024251.Application.Services
 
                 Console.WriteLine($"Report generated successfully at: {filePath}");
             }
+        }
+        public void GenerateKlingonXml(string filePath, List<SpaceShip> spaceShips)
+        {
+            // Gyökér elem az osztály attribútuma alapján
+            var rootAttribute = (KlingonTranslationAttribute)Attribute.GetCustomAttribute(typeof(SpaceShip), typeof(KlingonTranslationAttribute));
+            var rootElement = new XElement(rootAttribute.Translation);
+
+            foreach (var spaceShip in spaceShips)
+            {
+                // SpaceShip elem
+                var classAttribute = (KlingonTranslationAttribute)Attribute.GetCustomAttribute(typeof(SpaceShip), typeof(KlingonTranslationAttribute));
+                var shipElement = new XElement("ghIlghameS");
+
+                // Property-k bejárása
+                foreach (var prop in typeof(SpaceShip).GetProperties())
+                {
+                    var propAttribute = (KlingonTranslationAttribute)Attribute.GetCustomAttribute(prop, typeof(KlingonTranslationAttribute));
+                    if (propAttribute != null)
+                    {
+                        var value = prop.GetValue(spaceShip)?.ToString() ?? "null";
+                        shipElement.Add(new XElement(propAttribute.Translation, value));
+                    }
+                }
+
+                rootElement.Add(shipElement);
+            }
+
+            // XML fájl mentése
+            var xDocument = new XDocument(rootElement);
+            xDocument.Save(filePath);
+
+            Console.WriteLine($"Klingon XML generated successfully at: {filePath}");
         }
         public List<SpaceShip> GetAllSpaceShips()
         {
