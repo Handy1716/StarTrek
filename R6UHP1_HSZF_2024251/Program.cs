@@ -30,7 +30,8 @@ namespace R6UHP1_HSZF_2024251.Console
                 Console.WriteLine("4. Delete");
                 Console.WriteLine("5. Generate Klingon XML");
                 Console.WriteLine("6. Generate Mission Completion Report");
-                Console.WriteLine("7. Exit");
+                Console.WriteLine("7. Generate SpaceShip Report");
+                Console.WriteLine("8. Exit");
                 Console.Write("Please select an option: ");
 
                 var choice = Console.ReadLine();
@@ -56,6 +57,9 @@ namespace R6UHP1_HSZF_2024251.Console
                         GenerateMissionReportMenu();
                         break;
                     case "7":
+                        GenerateSpaceShipReportMenu();
+                        break;
+                    case "8":
                         exit = true;
                         Console.WriteLine("Exiting...");
                         break;
@@ -66,6 +70,30 @@ namespace R6UHP1_HSZF_2024251.Console
                 }
             }
         }
+        static void GenerateSpaceShipReportMenu()
+        {
+            Console.Clear();
+            Console.WriteLine("=== Generate SpaceShip Report ===");
+
+            var spaceShipService = new SpaceShipService();
+
+            Console.Write("Generating SpaceShip Report....");
+            var filePath = "SpaceShipReport.xml";
+
+            try
+            {
+                spaceShipService.GenerateSpaceShipReport(filePath);
+                Console.WriteLine($"SpaceShip report generated successfully at: {filePath}");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"An error occurred while generating the report: {ex.Message}");
+            }
+
+            Console.WriteLine("Press any key to return to the main menu...");
+            Console.ReadKey();
+        }
+
 
         static void GenerateMissionReportMenu()
         {
@@ -731,7 +759,7 @@ namespace R6UHP1_HSZF_2024251.Console
         static void ListPagedSpaceShipsByNameOrStatus()
         {
             int pageNumber = 1;
-            const int pageSize = 5;
+            const int pageSize = 10;
 
             Console.Clear();
             Console.Write("Enter Name or Status to filter SpaceShips: ");

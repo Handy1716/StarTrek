@@ -1,6 +1,5 @@
 C:\Users\polga\source\repos\R6UHP1_HSZF_2024251\R6UHP1_HSZF_2024251.Test\bin\Debug\net8.0\.msCoverageSourceRootsMapping_R6UHP1_HSZF_2024251.Test
 C:\Users\polga\source\repos\R6UHP1_HSZF_2024251\R6UHP1_HSZF_2024251.Test\bin\Debug\net8.0\testhost.dll
-C:\Users\polga\source\repos\R6UHP1_HSZF_2024251\R6UHP1_HSZF_2024251.Test\bin\Debug\net8.0\StarTrekData.xml
 C:\Users\polga\source\repos\R6UHP1_HSZF_2024251\R6UHP1_HSZF_2024251.Test\bin\Debug\net8.0\testhost.exe
 C:\Users\polga\source\repos\R6UHP1_HSZF_2024251\R6UHP1_HSZF_2024251.Test\bin\Debug\net8.0\NUnit3.TestAdapter.dll
 C:\Users\polga\source\repos\R6UHP1_HSZF_2024251\R6UHP1_HSZF_2024251.Test\bin\Debug\net8.0\NUnit3.TestAdapter.pdb

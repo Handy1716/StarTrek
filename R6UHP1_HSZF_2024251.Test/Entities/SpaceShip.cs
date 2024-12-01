@@ -1,4 +1,4 @@
-﻿using R6UHP1_HSZF_2024251.Persistence.MsSql.Infrastructure.Atributes;
+﻿using R6UHP1_HSZF_2024251.Model.Atributes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;

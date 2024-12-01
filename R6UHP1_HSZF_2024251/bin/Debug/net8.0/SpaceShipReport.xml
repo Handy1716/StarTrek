@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SpaceShips>
+  <SpaceShip>
+    <Id>1</Id>
+    <Name>USS Enterprise</Name>
+    <Type>Explorer</Type>
+    <CrewCount>100</CrewCount>
+    <Status>Active</Status>
+    <PlanetId>1</PlanetId>
+  </SpaceShip>
+  <SpaceShip>
+    <Id>2</Id>
+    <Name>USS Voyager</Name>
+    <Type>Research</Type>
+    <CrewCount>120</CrewCount>
+    <Status>Inactive</Status>
+    <PlanetId>2</PlanetId>
+  </SpaceShip>
+  <SpaceShip>
+    <Id>3</Id>
+    <Name>USS Defiant</Name>
+    <Type>Fighter</Type>
+    <CrewCount>50</CrewCount>
+    <Status>Active</Status>
+    <PlanetId>3</PlanetId>
+  </SpaceShip>
+  <SpaceShip>
+    <Id>4</Id>
+    <Name>USS Discovery</Name>
+    <Type>Medical</Type>
+    <CrewCount>80</CrewCount>
+    <Status>Active</Status>
+    <PlanetId>4</PlanetId>
+  </SpaceShip>
+  <SpaceShip>
+    <Id>5</Id>
+    <Name>USS Titan</Name>
+    <Type>Cargo</Type>
+    <CrewCount>200</CrewCount>
+    <Status>Inactive</Status>
+    <PlanetId>5</PlanetId>
+  </SpaceShip>
+</SpaceShips>
