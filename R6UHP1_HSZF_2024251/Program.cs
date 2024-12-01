@@ -7,30 +7,318 @@ using static R6UHP1_HSZF_2024251.Persistence.MsSql.Infrastructure.Entities.CrewM
 using static R6UHP1_HSZF_2024251.Persistence.MsSql.Infrastructure.Entities.Mission;
 using static R6UHP1_HSZF_2024251.Persistence.MsSql.Infrastructure.Entities.Planet;
 using static R6UHP1_HSZF_2024251.Persistence.MsSql.Infrastructure.Entities.SpaceShip;
+using Console = System.Console;
 
 namespace R6UHP1_HSZF_2024251.Console
 {
+    using Console = System.Console;
     internal class Program
+
     {
         static void Main(string[] args)
         {
-            ReadIn();
-            var spaceShipService = new SpaceShipService();
-            using (var context = new StarTrekDbContext())
-            {
-                var ship = context.SpaceShips.FirstOrDefault();
-                System.Console.WriteLine($"Ship Name: {ship.Name}");
 
-                // Lazy loading: a Planet csak akkor töltődik be, amikor először hozzáférünk
-                if (ship.PlanetId != null)
+            bool exit = false;
+
+            while (!exit)
+            {
+                Console.Clear();
+                Console.WriteLine("=== Star Trek Data Management System ===");
+                Console.WriteLine("1. Create");
+                Console.WriteLine("2. Read");
+                Console.WriteLine("3. Update");
+                Console.WriteLine("4. Delete");
+                Console.WriteLine("5. Exit");
+                Console.Write("Please select an option: ");
+
+                var choice = Console.ReadLine();
+
+                switch (choice)
                 {
-                    System.Console.WriteLine($"Assigned Planet: {ship.Planet.Name}");
-                }
-                else
-                {
-                    System.Console.WriteLine("This ship is not assigned to any planet.");
+                    case "1":
+                        HandleCreate();
+                        break;
+                    case "2":
+                        HandleRead();
+                        break;
+                    case "3":
+                        HandleUpdate();
+                        break;
+                    case "4":
+                        HandleDelete();
+                        break;
+                    case "5":
+                        exit = true;
+                        Console.WriteLine("Exiting...");
+                        break;
+                    default:
+                        Console.WriteLine("Invalid option! Press any key to continue...");
+                        Console.ReadKey();
+                        break;
                 }
             }
+            static void HandleCreate()
+            {
+                Console.Clear();
+                Console.WriteLine("=== Create ===");
+                Console.WriteLine("1. SpaceShip");
+                Console.WriteLine("2. Planet");
+                Console.WriteLine("3. CrewMember");
+                Console.WriteLine("4. Mission");
+                Console.WriteLine("5. Back to Main Menu");
+                Console.Write("Please select an option: ");
+
+                var choice = Console.ReadLine();
+
+                switch (choice)
+                {
+                    case "1":
+                        CreateSpaceShip();
+                        break;
+                    case "2":
+                        CreatePlanet();
+                        break;
+                    case "3":
+                        CreateCrewMember();
+                        break;
+                    case "4":
+                        CreateMission();
+                        break;
+                    case "5":
+                        return;
+                    default:
+                        Console.WriteLine("Invalid option! Press any key to continue...");
+                        Console.ReadKey();
+                        break;
+                }
+            }
+
+            static void HandleRead()
+            {
+                Console.Clear();
+                Console.WriteLine("=== Read ===");
+                Console.WriteLine("1. List SpaceShips");
+                Console.WriteLine("2. List Planets");
+                Console.WriteLine("3. List CrewMembers");
+                Console.WriteLine("4. List Missions");
+                Console.WriteLine("5. Back to Main Menu");
+                Console.Write("Please select an option: ");
+
+                var choice = Console.ReadLine();
+
+                switch (choice)
+                {
+                    case "1":
+                        ListPagedSpaceShips();
+                        break;
+                    case "2":
+                        ListPagedPlanets();
+                        break;
+                    case "3":
+                        ListPagedCrewMembers();
+                        break;
+                    case "4":
+                        ListPagedMissions();
+                        break;
+                    case "5":
+                        return;
+                    default:
+                        Console.WriteLine("Invalid option! Press any key to continue...");
+                        Console.ReadKey();
+                        break;
+                }
+            }
+
+            static void HandleUpdate()
+            {
+                Console.Clear();
+                Console.WriteLine("=== Update ===");
+                Console.WriteLine("1. Update SpaceShip");
+                Console.WriteLine("2. Update Planet");
+                Console.WriteLine("3. Update CrewMember");
+                Console.WriteLine("4. Update Mission");
+                Console.WriteLine("5. Back to Main Menu");
+                Console.Write("Please select an option: ");
+
+                var choice = Console.ReadLine();
+
+                switch (choice)
+                {
+                    case "1":
+                        UpdateSpaceShip();
+                        break;
+                    case "2":
+                        UpdatePlanet();
+                        break;
+                    case "3":
+                        UpdateCrewMember();
+                        break;
+                    case "4":
+                        UpdateMission();
+                        break;
+                    case "5":
+                        return;
+                    default:
+                        Console.WriteLine("Invalid option! Press any key to continue...");
+                        Console.ReadKey();
+                        break;
+                }
+            }
+
+            static void HandleDelete()
+            {
+                Console.Clear();
+                Console.WriteLine("=== Delete ===");
+                Console.WriteLine("1. Delete SpaceShip");
+                Console.WriteLine("2. Delete Planet");
+                Console.WriteLine("3. Delete CrewMember");
+                Console.WriteLine("4. Delete Mission");
+                Console.WriteLine("5. Back to Main Menu");
+                Console.Write("Please select an option: ");
+
+                var choice = Console.ReadLine();
+
+                switch (choice)
+                {
+                    case "1":
+                        DeleteSpaceShip();
+                        break;
+                    case "2":
+                        DeletePlanet();
+                        break;
+                    case "3":
+                        DeleteCrewMember();
+                        break;
+                    case "4":
+                        DeleteMission();
+                        break;
+                    case "5":
+                        return;
+                    default:
+                        Console.WriteLine("Invalid option! Press any key to continue...");
+                        Console.ReadKey();
+                        break;
+                }
+            }
+
+            // CRUD methods implementation
+            static void CreateSpaceShip()
+            {
+                System.Console.Clear();
+                System.Console.WriteLine("=== Create SpaceShip ===");
+
+                // Űrhajó neve
+                System.Console.Write("Enter the name of the spaceship: ");
+                var name = System.Console.ReadLine();
+
+                // Típus kiválasztása menüből
+                System.Console.WriteLine("Select the type of the spaceship:");
+                foreach (var type in Enum.GetValues(typeof(SpaceShip.SpaceShipType)))
+                {
+                    System.Console.WriteLine($"{(int)type} - {type}");
+                }
+                SpaceShip.SpaceShipType selectedType;
+                while (true)
+                {
+                    System.Console.Write("Enter the number corresponding to the type: ");
+                    if (int.TryParse(System.Console.ReadLine(), out int typeSelection) &&
+                        Enum.IsDefined(typeof(SpaceShip.SpaceShipType), typeSelection))
+                    {
+                        selectedType = (SpaceShip.SpaceShipType)typeSelection;
+                        break;
+                    }
+                    else
+                    {
+                        System.Console.WriteLine("Invalid selection. Please try again.");
+                    }
+                }
+
+                // Legénység létszáma
+                System.Console.Write("Enter the crew count: ");
+                var crewCount = int.TryParse(System.Console.ReadLine(), out int crewCountValue) ? crewCountValue : 0;
+
+                // Státusz kiválasztása menüből
+                System.Console.WriteLine("Select the status of the spaceship:");
+                foreach (var status in Enum.GetValues(typeof(SpaceShip.SpaceShipStatus)))
+                {
+                    System.Console.WriteLine($"{(int)status} - {status}");
+                }
+                SpaceShip.SpaceShipStatus selectedStatus;
+                while (true)
+                {
+                    System.Console.Write("Enter the number corresponding to the status: ");
+                    if (int.TryParse(System.Console.ReadLine(), out int statusSelection) &&
+                        Enum.IsDefined(typeof(SpaceShip.SpaceShipStatus), statusSelection))
+                    {
+                        selectedStatus = (SpaceShip.SpaceShipStatus)statusSelection;
+                        break;
+                    }
+                    else
+                    {
+                        System.Console.WriteLine("Invalid selection. Please try again.");
+                    }
+                }
+
+                // Bolygó ID (opcionális)
+                System.Console.Write("Enter the PlanetId (or leave blank if none): ");
+                var planetIdInput = System.Console.ReadLine();
+                int? planetId = string.IsNullOrWhiteSpace(planetIdInput) ? null : int.Parse(planetIdInput);
+
+                // Űrhajó létrehozása
+                var newSpaceShip = new SpaceShip
+                {
+                    Name = name,
+                    Type = selectedType,
+                    CrewCount = crewCountValue,
+                    Status = selectedStatus,
+                    PlanetId = planetId
+                };
+
+                // Mentés
+
+                    var spaceShipService = new SpaceShipService();
+                    spaceShipService.CreateSpaceShip(newSpaceShip);
+                    System.Console.WriteLine("SpaceShip created successfully!");
+
+                System.Console.WriteLine("Press any key to return to the menu...");
+                System.Console.ReadKey();
+            }
+            static void CreatePlanet() { /* Implement Planet creation */ }
+            static void CreateCrewMember() { /* Implement CrewMember creation */ }
+            static void CreateMission() { /* Implement Mission creation */ }
+
+            static void ListPagedSpaceShips() { /* Implement paged SpaceShip listing */ }
+            static void ListPagedPlanets() { /* Implement paged Planet listing */ }
+            static void ListPagedCrewMembers() { /* Implement paged CrewMember listing */ }
+            static void ListPagedMissions() { /* Implement paged Mission listing */ }
+
+            static void UpdateSpaceShip() { /* Implement SpaceShip update */ }
+            static void UpdatePlanet() { /* Implement Planet update */ }
+            static void UpdateCrewMember() { /* Implement CrewMember update */ }
+            static void UpdateMission() { /* Implement Mission update */ }
+
+            static void DeleteSpaceShip() { /* Implement SpaceShip deletion */ }
+            static void DeletePlanet() { /* Implement Planet deletion */ }
+            static void DeleteCrewMember() { /* Implement CrewMember deletion */ }
+            static void DeleteMission() { /* Implement Mission deletion */ }
+
+            //ReadIn();
+            //var spaceShipService = new SpaceShipService();
+            //using (var context = new StarTrekDbContext())
+            //{
+            //    var ship = context.SpaceShips.FirstOrDefault();
+            //    System.Console.WriteLine($"Ship Name: {ship.Name}");
+
+            //    // Lazy loading: a Planet csak akkor töltődik be, amikor először hozzáférünk
+            //    if (ship.PlanetId != null)
+            //    {
+            //        System.Console.WriteLine($"Assigned Planet: {ship.Planet.Name}");
+            //    }
+            //    else
+            //    {
+            //        System.Console.WriteLine("This ship is not assigned to any planet.");
+            //    }
+            //}
 
 
             //////-------- 4 feladat riportok
@@ -47,15 +335,15 @@ namespace R6UHP1_HSZF_2024251.Console
             ////-------------
 
             //SpaceShipKlingon
-            var spaceShips = new List<SpaceShip>
-                {
-                new SpaceShip { Id = 1, Name = "USSEnterprise", Type = SpaceShip.SpaceShipType.Explorer, CrewCount = 100, Status = SpaceShip.SpaceShipStatus.Active, PlanetId = 1 },
-                new SpaceShip { Id = 2, Name = "USSVoyager", Type = SpaceShip.SpaceShipType.Medical, CrewCount = 150, Status = SpaceShip.SpaceShipStatus.Inactive, PlanetId = null }
-                };
+            //var spaceShips = new List<SpaceShip>
+            //    {
+            //    new SpaceShip { Id = 1, Name = "USSEnterprise", Type = SpaceShip.SpaceShipType.Explorer, CrewCount = 100, Status = SpaceShip.SpaceShipStatus.Active, PlanetId = 1 },
+            //    new SpaceShip { Id = 2, Name = "USSVoyager", Type = SpaceShip.SpaceShipType.Medical, CrewCount = 150, Status = SpaceShip.SpaceShipStatus.Inactive, PlanetId = null }
+            //    };
 
-            // Riport generálása
-            string filePath = "SpaceShipKlingonReport.xml";
-            spaceShipService.GenerateKlingonXml(filePath, spaceShips);
+            //// Riport generálása
+            //string filePath = "SpaceShipKlingonReport.xml";
+            //spaceShipService.GenerateKlingonXml(filePath, spaceShips);
 
             //Paged();
             //foreach (var ship in activeShips)
@@ -139,7 +427,7 @@ namespace R6UHP1_HSZF_2024251.Console
 
             while (true)
             {
-                
+
                 System.Console.Clear();
                 System.Console.WriteLine($"Page {currentPage}/{totalPages}");
 
