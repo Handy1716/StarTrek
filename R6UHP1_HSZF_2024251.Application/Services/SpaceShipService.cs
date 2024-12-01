@@ -146,43 +146,43 @@ namespace R6UHP1_HSZF_2024251.Application.Services
             // Csere: távolítsa el az érvénytelen karaktereket
             return new string(name.Where(c => char.IsLetterOrDigit(c) || c == '_').ToArray());
         }
-        public List<SpaceShip> GetAllSpaceShips()
-        {
-            using (var context = new StarTrekDbContext())
-            {
-                return context.SpaceShips.ToList();
-            }
-        }
+        //public List<SpaceShip> GetAllSpaceShips()
+        //{
+        //    using (var context = new StarTrekDbContext())
+        //    {
+        //        return context.SpaceShips.ToList();
+        //    }
+        //}
 
-        public List<SpaceShip> GetSpaceShipsByName(string name)
-        {
-            using (var context = new StarTrekDbContext())
-            {
-                return context.SpaceShips
-                    .Where(s => s.Name.Contains(name))
-                    .ToList();
-            }
-        }
-        public List<SpaceShip> GetSpaceShipsByStatus(SpaceShip.SpaceShipStatus status)
-        {
-            using (var context = new StarTrekDbContext())
-            {
-                return context.SpaceShips
-                    .Where(s => s.Status == status)
-                    .ToList();
-            }
-        }
-        public List<SpaceShip> GetPagedSpaceShipsByStatus(SpaceShip.SpaceShipStatus status, int pageNumber, int pageSize)
-        {
-            using (var context = new StarTrekDbContext())
-            {
-                var query = context.SpaceShips
-                    .Where(s => s.Status == status)
-                    .OrderBy(s => s.Name);
+        //public List<SpaceShip> GetSpaceShipsByName(string name)
+        //{
+        //    using (var context = new StarTrekDbContext())
+        //    {
+        //        return context.SpaceShips
+        //            .Where(s => s.Name.Contains(name))
+        //            .ToList();
+        //    }
+        //}
+        //public List<SpaceShip> GetSpaceShipsByStatus(SpaceShip.SpaceShipStatus status)
+        //{
+        //    using (var context = new StarTrekDbContext())
+        //    {
+        //        return context.SpaceShips
+        //            .Where(s => s.Status == status)
+        //            .ToList();
+        //    }
+        //}
+        //public List<SpaceShip> GetPagedSpaceShipsByStatus(SpaceShip.SpaceShipStatus status, int pageNumber, int pageSize)
+        //{
+        //    using (var context = new StarTrekDbContext())
+        //    {
+        //        var query = context.SpaceShips
+        //            .Where(s => s.Status == status)
+        //            .OrderBy(s => s.Name);
 
-                return GetPagedResults(query, pageNumber, pageSize);
-            }
-        }
+        //        return GetPagedResults(query, pageNumber, pageSize);
+        //    }
+        //}
 
 
         public List<SpaceShip> GetPagedSpaceShips(int pageNumber, int pageSize)
@@ -190,6 +190,18 @@ namespace R6UHP1_HSZF_2024251.Application.Services
             using (var context = new StarTrekDbContext())
             {
                 var query = context.SpaceShips.OrderBy(s => s.Name);
+                return GetPagedResults(query, pageNumber, pageSize);
+            }
+        }
+        public List<SpaceShip> GetPagedSpaceShipsByNameOrStatus(int pageNumber, int pageSize, string nameOrStatus)
+        {
+            using (var context = new StarTrekDbContext())
+            {
+                var query = context.SpaceShips
+                    .Where(s => s.Name.Contains(nameOrStatus) ||
+                                s.Status.ToString().Equals(nameOrStatus, StringComparison.OrdinalIgnoreCase))
+                    .OrderBy(s => s.Name);
+
                 return GetPagedResults(query, pageNumber, pageSize);
             }
         }

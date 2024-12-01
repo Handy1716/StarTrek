@@ -769,6 +769,11 @@ namespace R6UHP1_HSZF_2024251.Console
             System.Console.WriteLine("Press any key to return to the menu...");
             System.Console.ReadKey();
         }
+        public static void ReadIn()
+        {
+            var importService = new DataImportService();
+            importService.ReadIn();
+        }
 
         //ReadIn();
         //var spaceShipService = new SpaceShipService();
@@ -880,72 +885,67 @@ namespace R6UHP1_HSZF_2024251.Console
         //planetService.DeletePlanet(planetId: 1);
         //planetService.CreatePlanet(newPlanet);
 
-        public static void ReadIn()
-        {
-            var importService = new DataImportService();
-            importService.ReadIn();
-        }
-        public static void Paged()
-        {
-            var spaceShipService = new SpaceShipService();
-            var crewMemberService = new CrewMemberService();
-            var missionService = new MissionService();
-            var currentPage = 1;
-            var totalPages = 3;
+        //public static void Paged()
+        //{
+        //    var spaceShipService = new SpaceShipService();
+        //    var crewMemberService = new CrewMemberService();
+        //    var missionService = new MissionService();
+        //    var currentPage = 1;
+        //    var totalPages = 3;
 
-            while (true)
-            {
+        //    while (true)
+        //    {
 
-                System.Console.Clear();
-                System.Console.WriteLine($"Page {currentPage}/{totalPages}");
+        //        System.Console.Clear();
+        //        System.Console.WriteLine($"Page {currentPage}/{totalPages}");
 
-                switch (currentPage)
-                {
-                    case 1:
-                        System.Console.WriteLine("SpaceShips:");
-                        var spaceShips = spaceShipService.GetAllSpaceShips(); // Összes űrhajó lekérdezése
-                        foreach (var ship in spaceShips)
-                        {
-                            System.Console.WriteLine($"- {ship.Name} (Status: {ship.Status})");
-                        }
-                        break;
+        //        switch (currentPage)
+        //        {
+        //            case 1:
+        //                System.Console.WriteLine("SpaceShips:");
+        //                var spaceShips = spaceShipService.GetAllSpaceShips(); // Összes űrhajó lekérdezése
+        //                foreach (var ship in spaceShips)
+        //                {
+        //                    System.Console.WriteLine($"- {ship.Name} (Status: {ship.Status})");
+        //                }
+        //                break;
 
-                    case 2:
-                        System.Console.WriteLine("CrewMembers:");
-                        var crewMembers = crewMemberService.GetAllCrewMembers(); // Összes legénységi tag lekérdezése
-                        foreach (var member in crewMembers)
-                        {
-                            System.Console.WriteLine($"- {member.Name} (Rank: {member.Rank})");
-                        }
-                        break;
+        //            case 2:
+        //                System.Console.WriteLine("CrewMembers:");
+        //                var crewMembers = crewMemberService.GetAllCrewMembers(); // Összes legénységi tag lekérdezése
+        //                foreach (var member in crewMembers)
+        //                {
+        //                    System.Console.WriteLine($"- {member.Name} (Rank: {member.Rank})");
+        //                }
+        //                break;
 
-                    case 3:
-                        System.Console.WriteLine("Missions:");
-                        var missions = missionService.GetAllMissions(); // Összes küldetés lekérdezése
-                        foreach (var mission in missions)
-                        {
-                            System.Console.WriteLine($"- Mission to Planet {mission.TargetPlanetId} (Status: {mission.Status})");
-                        }
-                        break;
-                }
+        //            case 3:
+        //                System.Console.WriteLine("Missions:");
+        //                var missions = missionService.GetAllMissions(); // Összes küldetés lekérdezése
+        //                foreach (var mission in missions)
+        //                {
+        //                    System.Console.WriteLine($"- Mission to Planet {mission.TargetPlanetId} (Status: {mission.Status})");
+        //                }
+        //                break;
+        //        }
 
-                System.Console.WriteLine("\nPress 'n' for next page, 'p' for previous page, or any other key to exit.");
-                var input = System.Console.ReadLine();
+        //        System.Console.WriteLine("\nPress 'n' for next page, 'p' for previous page, or any other key to exit.");
+        //        var input = System.Console.ReadLine();
 
-                if (input == "n" && currentPage < totalPages)
-                {
-                    currentPage++;
-                }
-                else if (input == "p" && currentPage > 1)
-                {
-                    currentPage--;
-                }
-                else
-                {
-                    break;
-                }
-            }
-        }
+        //        if (input == "n" && currentPage < totalPages)
+        //        {
+        //            currentPage++;
+        //        }
+        //        else if (input == "p" && currentPage > 1)
+        //        {
+        //            currentPage--;
+        //        }
+        //        else
+        //        {
+        //            break;
+        //        }
+        //    }
+        //}
 
     }
 }
