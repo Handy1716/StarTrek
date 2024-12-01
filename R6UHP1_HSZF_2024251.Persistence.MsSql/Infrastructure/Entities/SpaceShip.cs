@@ -37,6 +37,10 @@ namespace R6UHP1_HSZF_2024251.Persistence.MsSql.Infrastructure.Entities
         [KlingonTranslation("yuQHa'")]
         public int? PlanetId { get; set; }
 
+        [ForeignKey("PlanetId")]
+        public virtual Planet? Planet { get; set; }
+        public virtual ICollection<CrewMember> CrewMembers { get; set; }
+
         public enum SpaceShipStatus
         {
             Active,

@@ -23,9 +23,7 @@ namespace R6UHP1_HSZF_2024251.Persistence.MsSql.Infrastructure.Entities
 
         public int? ExplorationShipId { get; set; }
 
-        // Navigation Property
-        public SpaceShip? ExplorationShip { get; set; }
-        public ICollection<Mission> Missions { get; set; }
+        public virtual ICollection<Mission> Missions { get; set; }
 
         public enum PlanetType
         {

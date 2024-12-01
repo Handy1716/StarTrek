@@ -29,7 +29,8 @@ namespace R6UHP1_HSZF_2024251.Persistence.MsSql.Infrastructure.Entities
         public int? MissionCount { get; set; }
 
         // Navigation Property
-        public SpaceShip SpaceShip { get; set; }
+        [ForeignKey("SpaceShipId")]
+        public virtual SpaceShip SpaceShip { get; set; }
 
 
         public enum CrewMemberRank

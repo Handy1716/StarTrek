@@ -35,7 +35,7 @@ namespace R6UHP1_HSZF_2024251.Persistence.MsSql.Infrastructure.Contexts
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             string connStr = @"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=StarTrekDB;Integrated Security=True;MultipleActiveResultSets=true";
-            optionsBuilder.UseSqlServer(connStr);
+            optionsBuilder.UseLazyLoadingProxies().UseSqlServer(connStr);
             base.OnConfiguring(optionsBuilder);
         }
 

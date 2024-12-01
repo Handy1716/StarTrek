@@ -66,14 +66,14 @@ namespace R6UHP1_HSZF_2024251.Persistence.MsSql.Infrastructure.Services
 
 
             var context = new StarTrekDbContext(true);
-            spaceships.ForEach(ship =>
-            {
-                context.SpaceShips.Add(ship);
-            });
-            context.SaveChanges();
             planets.ForEach(planet =>
             {
                 context.Planets.Add(planet);
+            });
+            context.SaveChanges();
+            spaceships.ForEach(ship =>
+            {
+                context.SpaceShips.Add(ship);
             });
             context.SaveChanges();
             crewmembers.ForEach(crewmember =>

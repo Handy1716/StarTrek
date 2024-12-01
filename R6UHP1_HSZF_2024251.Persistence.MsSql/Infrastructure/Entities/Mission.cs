@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Diagnostics.Contracts;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,7 +25,8 @@ namespace R6UHP1_HSZF_2024251.Persistence.MsSql.Infrastructure.Entities
         public MissionStatus Status { get; set; }
 
         // Navigation Properties
-        public Planet TargetPlanet { get; set; }
+        [ForeignKey("TargetPlanetId")]
+        public virtual Planet TargetPlanet { get; set; }
 
 
 

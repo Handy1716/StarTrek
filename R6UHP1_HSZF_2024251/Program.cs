@@ -16,38 +16,53 @@ namespace R6UHP1_HSZF_2024251.Console
         {
             ReadIn();
             var spaceShipService = new SpaceShipService();
-            string reportPath = "SpaceShipReport.xml";
+            using (var context = new StarTrekDbContext())
+            {
+                var ship = context.SpaceShips.FirstOrDefault();
+                System.Console.WriteLine($"Ship Name: {ship.Name}");
 
-            // Riport generálása
-            spaceShipService.GenerateSpaceShipReport(reportPath);
-            var activeShips = spaceShipService.GetSpaceShipsByStatus(SpaceShip.SpaceShipStatus.Active);
+                // Lazy loading: a Planet csak akkor töltődik be, amikor először hozzáférünk
+                if (ship.PlanetId != null)
+                {
+                    System.Console.WriteLine($"Assigned Planet: {ship.Planet.Name}");
+                }
+                else
+                {
+                    System.Console.WriteLine("This ship is not assigned to any planet.");
+                }
+            }
 
 
-            var missionService = new MissionService();
+            //////-------- 4 feladat riportok
+            //string reportPath = "SpaceShipReport.xml";
 
-            // Riport fájl elérési útja
-            string missionReportPath = "MissionReport.txt";
-
-            // Riport generálása
-            missionService.GenerateMissionReport(missionReportPath);
+            //// Riport generálása
+            //spaceShipService.GenerateSpaceShipReport(reportPath);
+            //var activeShips = spaceShipService.GetSpaceShipsByStatus(SpaceShip.SpaceShipStatus.Active);
+            //var missionService = new MissionService();
+            //// Riport fájl elérési útja
+            //string missionReportPath = "MissionReport.txt";
+            //// Riport generálása
+            //missionService.GenerateMissionReport(missionReportPath);
+            ////-------------
 
             //SpaceShipKlingon
-            var spaceShips = new List<SpaceShip>
-                {
-                new SpaceShip { Id = 1, Name = "USS Enterprise", Type = SpaceShip.SpaceShipType.Explorer, CrewCount = 100, Status = SpaceShip.SpaceShipStatus.Active, PlanetId = 1 },
-                new SpaceShip { Id = 2, Name = "USS Voyager", Type = SpaceShip.SpaceShipType.Medical, CrewCount = 150, Status = SpaceShip.SpaceShipStatus.Inactive, PlanetId = null }
-                };
+            //var spaceShips = new List<SpaceShip>
+            //    {
+            //    new SpaceShip { Id = 1, Name = "USS Enterprise", Type = SpaceShip.SpaceShipType.Explorer, CrewCount = 100, Status = SpaceShip.SpaceShipStatus.Active, PlanetId = 1 },
+            //    new SpaceShip { Id = 2, Name = "USS Voyager", Type = SpaceShip.SpaceShipType.Medical, CrewCount = 150, Status = SpaceShip.SpaceShipStatus.Inactive, PlanetId = null }
+            //    };
 
-            // Riport generálása
-            string filePath = "SpaceShipKlingonReport.xml";
-            spaceShipService.GenerateKlingonXml(filePath, spaceShips);
+            //// Riport generálása
+            //string filePath = "SpaceShipKlingonReport.xml";
+            //spaceShipService.GenerateKlingonXml(filePath, spaceShips);
 
-            Paged();
+            //Paged();
             //foreach (var ship in activeShips)
             //{
             //    System.Console.WriteLine($"Active Ship: {ship.Id} {ship.Name}");
             //}
-     
+
 
             //spaceShipService.OnOperationCompleted += message =>
             //{

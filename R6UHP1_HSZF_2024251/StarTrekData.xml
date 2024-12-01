@@ -22,7 +22,6 @@
       <Type>Explorer</Type>
       <CrewCount>100</CrewCount>
       <Status>Active</Status>
-      <PlanetId>1</PlanetId>
     </Spaceship>
     <Spaceship>
       <Id>4</Id>
@@ -30,7 +29,6 @@
       <Type>Explorer</Type>
       <CrewCount>100</CrewCount>
       <Status>Active</Status>
-      <PlanetId>1</PlanetId>
     </Spaceship>
   </Spaceships>
   <CrewMembers>
@@ -66,11 +64,11 @@
       <Type>Terrestrial</Type>
       <ExplorationShipId>1</ExplorationShipId>
     </Planet>
-  <Planet>
-    <Id>2</Id>
-    <Name>Earth2</Name>
-    <Type>Terrestrial</Type>
-  </Planet>
+    <Planet>
+      <Id>2</Id>
+      <Name>Earth2</Name>
+      <Type>Terrestrial</Type>
+    </Planet>
   </Planets>
   <Missions>
     <Mission>
