@@ -276,16 +276,175 @@ namespace R6UHP1_HSZF_2024251.Console
 
                 // Mentés
 
-                    var spaceShipService = new SpaceShipService();
-                    spaceShipService.CreateSpaceShip(newSpaceShip);
-                    System.Console.WriteLine("SpaceShip created successfully!");
+                var spaceShipService = new SpaceShipService();
+                spaceShipService.CreateSpaceShip(newSpaceShip);
+                System.Console.WriteLine("SpaceShip created successfully!");
 
                 System.Console.WriteLine("Press any key to return to the menu...");
                 System.Console.ReadKey();
             }
-            static void CreatePlanet() { /* Implement Planet creation */ }
-            static void CreateCrewMember() { /* Implement CrewMember creation */ }
-            static void CreateMission() { /* Implement Mission creation */ }
+            static void CreatePlanet()
+            {
+                System.Console.Clear();
+                System.Console.WriteLine("=== Create Planet ===");
+
+                // Bolygó neve
+                System.Console.Write("Enter the name of the planet: ");
+                var name = System.Console.ReadLine();
+
+                // Bolygó típusa menüből
+                System.Console.WriteLine("Select the type of the planet:");
+                foreach (var type in Enum.GetValues(typeof(Planet.PlanetType)))
+                {
+                    System.Console.WriteLine($"{(int)type} - {type}");
+                }
+                Planet.PlanetType selectedType;
+                while (true)
+                {
+                    System.Console.Write("Enter the number corresponding to the type: ");
+                    if (int.TryParse(System.Console.ReadLine(), out int typeSelection) &&
+                        Enum.IsDefined(typeof(Planet.PlanetType), typeSelection))
+                    {
+                        selectedType = (Planet.PlanetType)typeSelection;
+                        break;
+                    }
+                    else
+                    {
+                        System.Console.WriteLine("Invalid selection. Please try again.");
+                    }
+                }
+
+                // ExplorationShipId (opcionális)
+                System.Console.Write("Enter the ExplorationShipId (or leave blank if none): ");
+                var explorationShipIdInput = System.Console.ReadLine();
+                int? explorationShipId = string.IsNullOrWhiteSpace(explorationShipIdInput) ? null : int.Parse(explorationShipIdInput);
+
+                // Bolygó létrehozása
+                var newPlanet = new Planet
+                {
+                    Name = name,
+                    Type = selectedType,
+                    ExplorationShipId = explorationShipId
+                };
+
+                // Mentés
+                var planetService = new PlanetService();
+                planetService.CreatePlanet(newPlanet);
+                System.Console.WriteLine("Planet created successfully!");
+
+                System.Console.WriteLine("Press any key to return to the menu...");
+                System.Console.ReadKey();
+            }
+
+            static void CreateCrewMember()
+            {
+                System.Console.Clear();
+                System.Console.WriteLine("=== Create CrewMember ===");
+
+                // Legénység neve
+                System.Console.Write("Enter the name of the crew member: ");
+                var name = System.Console.ReadLine();
+
+                // Rank kiválasztása menüből
+                System.Console.WriteLine("Select the rank of the crew member:");
+                foreach (var rank in Enum.GetValues(typeof(CrewMember.CrewMemberRank)))
+                {
+                    System.Console.WriteLine($"{(int)rank} - {rank}");
+                }
+                CrewMember.CrewMemberRank selectedRank;
+                while (true)
+                {
+                    System.Console.Write("Enter the number corresponding to the rank: ");
+                    if (int.TryParse(System.Console.ReadLine(), out int rankSelection) &&
+                        Enum.IsDefined(typeof(CrewMember.CrewMemberRank), rankSelection))
+                    {
+                        selectedRank = (CrewMember.CrewMemberRank)rankSelection;
+                        break;
+                    }
+                    else
+                    {
+                        System.Console.WriteLine("Invalid selection. Please try again.");
+                    }
+                }
+
+                // SpaceshipId megadása
+                System.Console.Write("Enter the SpaceshipId the crew member belongs to: ");
+                var spaceshipId = int.Parse(System.Console.ReadLine() ?? "0");
+
+                // Legénységi tag létrehozása
+                var newCrewMember = new CrewMember
+                {
+                    Name = name,
+                    Rank = selectedRank,
+                    SpaceShipId = spaceshipId
+                };
+
+                // Mentés
+                var crewMemberService = new CrewMemberService();
+                crewMemberService.CreateCrewMember(newCrewMember);
+                System.Console.WriteLine("Crew member created successfully!");
+
+                System.Console.WriteLine("Press any key to return to the menu...");
+                System.Console.ReadKey();
+            }
+
+            static void CreateMission()
+            {
+                System.Console.Clear();
+                System.Console.WriteLine("=== Create Mission ===");
+
+                // Cél bolygó megadása
+                System.Console.Write("Enter the Target PlanetId: ");
+                var targetPlanetId = int.Parse(System.Console.ReadLine() ?? "0");
+
+                // Kezdő dátum megadása
+                System.Console.Write("Enter the Start Date (yyyy-MM-dd): ");
+                var startDate = DateTime.Parse(System.Console.ReadLine() ?? DateTime.Now.ToString("yyyy-MM-dd"));
+
+                // Befejező dátum (opcionális)
+                System.Console.Write("Enter the End Date (yyyy-MM-dd, or leave blank if ongoing): ");
+                var endDateInput = System.Console.ReadLine();
+                DateTime? endDate = string.IsNullOrWhiteSpace(endDateInput) ? null : DateTime.Parse(endDateInput);
+
+                // Státusz kiválasztása menüből
+                System.Console.WriteLine("Select the status of the mission:");
+                foreach (var status in Enum.GetValues(typeof(Mission.MissionStatus)))
+                {
+                    System.Console.WriteLine($"{(int)status} - {status}");
+                }
+                Mission.MissionStatus selectedStatus;
+                while (true)
+                {
+                    System.Console.Write("Enter the number corresponding to the status: ");
+                    if (int.TryParse(System.Console.ReadLine(), out int statusSelection) &&
+                        Enum.IsDefined(typeof(Mission.MissionStatus), statusSelection))
+                    {
+                        selectedStatus = (Mission.MissionStatus)statusSelection;
+                        break;
+                    }
+                    else
+                    {
+                        System.Console.WriteLine("Invalid selection. Please try again.");
+                    }
+                }
+
+                // Küldetés létrehozása
+                var newMission = new Mission
+                {
+                    TargetPlanetId = targetPlanetId,
+                    StartDate = startDate,
+                    EndDate = endDate,
+                    Status = selectedStatus
+                };
+
+                // Mentés
+                var missionService = new MissionService();
+                missionService.CreateMission(newMission);
+                System.Console.WriteLine("Mission created successfully!");
+
+                System.Console.WriteLine("Press any key to return to the menu...");
+                System.Console.ReadKey();
+            }
 
             static void ListPagedSpaceShips() { /* Implement paged SpaceShip listing */ }
             static void ListPagedPlanets() { /* Implement paged Planet listing */ }
