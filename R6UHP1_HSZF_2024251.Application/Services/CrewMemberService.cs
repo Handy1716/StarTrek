@@ -35,7 +35,7 @@ namespace R6UHP1_HSZF_2024251.Application.Services
         }
 
         // Delete metódus: Legénységi tag törlése
-        public void DeleteCrewMember(int crewMemberId)
+        public bool DeleteCrewMember(int crewMemberId)
         {
             using (var context = new StarTrekDbContext())
             {
@@ -47,15 +47,18 @@ namespace R6UHP1_HSZF_2024251.Application.Services
                         context.CrewMembers.Remove(crewMember);
                         context.SaveChanges();
                         OnOperationCompleted?.Invoke("CrewMember deleted successfully.");
+                        return true;
                     }
                     catch (Exception ex)
                     {
                         OnOperationCompleted?.Invoke($"Failed to delete CrewMember: {ex.Message}");
+                        return false;
                     }
                 }
                 else
                 {
                     OnOperationCompleted?.Invoke("CrewMember not found.");
+                    return false;
                 }
             }
         }

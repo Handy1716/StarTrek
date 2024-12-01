@@ -35,7 +35,7 @@ namespace R6UHP1_HSZF_2024251.Application.Services
         }
 
         // Delete metódus: Küldetés törlése
-        public void DeleteMission(int missionId)
+        public bool DeleteMission(int missionId)
         {
             using (var context = new StarTrekDbContext())
             {
@@ -47,15 +47,18 @@ namespace R6UHP1_HSZF_2024251.Application.Services
                         context.Missions.Remove(mission);
                         context.SaveChanges();
                         OnOperationCompleted?.Invoke("Mission deleted successfully.");
+                        return true;
                     }
                     catch (Exception ex)
                     {
                         OnOperationCompleted?.Invoke($"Failed to delete Mission: {ex.Message}");
+                        return false;
                     }
                 }
                 else
                 {
                     OnOperationCompleted?.Invoke("Mission not found.");
+                    return false;
                 }
             }
         }

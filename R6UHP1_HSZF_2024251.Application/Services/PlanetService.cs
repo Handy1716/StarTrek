@@ -34,7 +34,7 @@ namespace R6UHP1_HSZF_2024251.Application.Services
         }
 
         // Delete metódus: Bolygó törlése és hozzá kapcsolódó küldetések törlése
-        public void DeletePlanet(int planetId)
+        public bool DeletePlanet(int planetId)
         {
             using (var context = new StarTrekDbContext())
             {
@@ -51,16 +51,18 @@ namespace R6UHP1_HSZF_2024251.Application.Services
                         context.Planets.Remove(planet);
                         context.SaveChanges();
 
-                        OnOperationCompleted?.Invoke("Planet and related Missions deleted successfully.");
+                        return false;
                     }
                     catch (Exception ex)
                     {
                         OnOperationCompleted?.Invoke($"Failed to delete Planet: {ex.Message}");
+                        return false;
                     }
                 }
                 else
                 {
                     OnOperationCompleted?.Invoke("Planet not found.");
+                    return false;
                 }
             }
         }

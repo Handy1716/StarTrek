@@ -57,7 +57,7 @@ namespace R6UHP1_HSZF_2024251.Application.Services
             }
         }
 
-        public void DeleteSpaceShip(int spaceShipId)
+        public bool DeleteSpaceShip(int spaceShipId)
         {
             using (var context = new StarTrekDbContext())
             {
@@ -78,11 +78,11 @@ namespace R6UHP1_HSZF_2024251.Application.Services
                 {
                     context.SpaceShips.Remove(spaceShip);
                     context.SaveChanges();
-                    Console.WriteLine("SpaceShip deleted successfully, and related CrewMembers and Planets updated.");
+                    return true;
                 }
                 else
                 {
-                    Console.WriteLine("SpaceShip not found.");
+                    return false;
                 }
             }
         }
