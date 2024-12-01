@@ -29,7 +29,8 @@ namespace R6UHP1_HSZF_2024251.Console
                 Console.WriteLine("3. Update");
                 Console.WriteLine("4. Delete");
                 Console.WriteLine("5. Generate Klingon XML");
-                Console.WriteLine("6. Exit");
+                Console.WriteLine("6. Generate Mission Completion Report");
+                Console.WriteLine("7. Exit");
                 Console.Write("Please select an option: ");
 
                 var choice = Console.ReadLine();
@@ -52,6 +53,9 @@ namespace R6UHP1_HSZF_2024251.Console
                         GenerateKlingonXmlMenu();
                         break;
                     case "6":
+                        GenerateMissionReportMenu();
+                        break;
+                    case "7":
                         exit = true;
                         Console.WriteLine("Exiting...");
                         break;
@@ -62,6 +66,31 @@ namespace R6UHP1_HSZF_2024251.Console
                 }
             }
         }
+
+        static void GenerateMissionReportMenu()
+        {
+            Console.Clear();
+            Console.WriteLine("=== Generate Mission Completion Report ===");
+
+            var missionService = new MissionService();
+
+            Console.WriteLine("Generating Mission Completion Report.. ");
+            var filePath = "MissionCompletionReport.txt";
+
+            try
+            {
+                missionService.GenerateMissionReport(filePath);
+                Console.WriteLine($"Mission completion report generated successfully at: {filePath}");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"An error occurred while generating the report: {ex.Message}");
+            }
+
+            Console.WriteLine("Press any key to return to the main menu...");
+            Console.ReadKey();
+        }
+
         static void HandleCreate()
         {
             Console.Clear();

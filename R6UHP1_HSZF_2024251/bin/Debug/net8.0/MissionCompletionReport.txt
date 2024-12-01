@@ -6,9 +6,15 @@ Start Date: 2024. 01. 01. 0:00:00
 End Date: 2024. 01. 10. 0:00:00
 Status: Completed
 ---------------------------------------------------
+Mission ID: 2
+Target Planet ID: 2
+Start Date: 2024. 01. 15. 0:00:00
+End Date: 2024. 01. 20. 0:00:00
+Status: Completed
+---------------------------------------------------
 Mission ID: 4
-Target Planet ID: 1
-Start Date: 2024. 01. 01. 0:00:00
-End Date: 2024. 01. 11. 0:00:00
+Target Planet ID: 4
+Start Date: 2024. 02. 01. 0:00:00
+End Date: 2024. 02. 10. 0:00:00
 Status: Completed
 ---------------------------------------------------
