@@ -66,28 +66,34 @@ namespace R6UHP1_HSZF_2024251.Application.Services
                 }
             }
         }
-        public void UpdatePlanet(int planetId, Action<Planet> updateAction)
+        public Planet? GetPlanetById(int id)
         {
             using (var context = new StarTrekDbContext())
             {
-                var planet = context.Planets.Find(planetId);
-                if (planet != null)
+                // Lekérdezi a bolygót az ID alapján
+                return context.Planets.FirstOrDefault(p => p.Id == id);
+            }
+        }
+
+        public bool UpdatePlanet(Planet planet)
+        {
+            using (var context = new StarTrekDbContext())
+            {
+                var existingPlanet = context.Planets.FirstOrDefault(p => p.Id == planet.Id);
+
+                if (existingPlanet == null)
                 {
-                    try
-                    {
-                        updateAction(planet); // Frissítési logika kívülről érkezik
-                        context.SaveChanges();
-                        OnOperationCompleted?.Invoke("Planet updated successfully.");
-                    }
-                    catch (Exception ex)
-                    {
-                        OnOperationCompleted?.Invoke($"Failed to update Planet: {ex.Message}");
-                    }
+                    // Ha a bolygó nem található
+                    return false;
                 }
-                else
-                {
-                    OnOperationCompleted?.Invoke("Planet not found.");
-                }
+
+                // Frissítjük a bolygó mezőit
+                existingPlanet.Name = planet.Name;
+                existingPlanet.Type = planet.Type;
+
+                // Adatbázis mentése
+                context.SaveChanges();
+                return true;
             }
         }
 

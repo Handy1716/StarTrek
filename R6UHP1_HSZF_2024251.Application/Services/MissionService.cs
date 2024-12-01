@@ -62,28 +62,36 @@ namespace R6UHP1_HSZF_2024251.Application.Services
                 }
             }
         }
-        public void UpdateSpaceShip(int spaceShipId, Action<SpaceShip> updateAction)
+        public Mission? GetMissionById(int id)
         {
             using (var context = new StarTrekDbContext())
             {
-                var spaceShip = context.SpaceShips.Find(spaceShipId);
-                if (spaceShip != null)
+                // Lekérdezi a küldetést az ID alapján
+                return context.Missions.FirstOrDefault(m => m.Id == id);
+            }
+        }
+
+        public bool UpdateMission(Mission mission)
+        {
+            using (var context = new StarTrekDbContext())
+            {
+                var existingMission = context.Missions.FirstOrDefault(m => m.Id == mission.Id);
+
+                if (existingMission == null)
                 {
-                    try
-                    {
-                        updateAction(spaceShip); // Frissítési logika kívülről érkezik
-                        context.SaveChanges();
-                        OnOperationCompleted?.Invoke("SpaceShip updated successfully.");
-                    }
-                    catch (Exception ex)
-                    {
-                        OnOperationCompleted?.Invoke($"Failed to update SpaceShip: {ex.Message}");
-                    }
+                    // Ha a küldetés nem található
+                    return false;
                 }
-                else
-                {
-                    OnOperationCompleted?.Invoke("SpaceShip not found.");
-                }
+
+                // Frissítjük a küldetés mezőit
+                existingMission.TargetPlanetId = mission.TargetPlanetId;
+                existingMission.StartDate = mission.StartDate;
+                existingMission.EndDate = mission.EndDate;
+                existingMission.Status = mission.Status;
+
+                // Adatbázis mentése
+                context.SaveChanges();
+                return true;
             }
         }
         public void GenerateMissionReport(string filePath)

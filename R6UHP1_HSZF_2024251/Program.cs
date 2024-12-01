@@ -736,10 +736,253 @@ namespace R6UHP1_HSZF_2024251.Console
             }
         }
 
-        static void UpdateSpaceShip() { /* Implement SpaceShip update */ }
-        static void UpdatePlanet() { /* Implement Planet update */ }
-        static void UpdateCrewMember() { /* Implement CrewMember update */ }
-        static void UpdateMission() { /* Implement Mission update */ }
+        static void UpdateSpaceShip()
+        {
+            Console.Clear();
+            Console.WriteLine("=== Update SpaceShip ===");
+
+            Console.Write("Enter SpaceShip ID to update: ");
+            if (!int.TryParse(Console.ReadLine(), out int id))
+            {
+                Console.WriteLine("Invalid ID! Press any key to return to the menu...");
+                Console.ReadKey();
+                return;
+            }
+
+            var spaceShipService = new SpaceShipService();
+            var spaceShip = spaceShipService.GetSpaceShipById(id);
+
+            if (spaceShip == null)
+            {
+                Console.WriteLine("SpaceShip not found! Press any key to return to the menu...");
+                Console.ReadKey();
+                return;
+            }
+
+            Console.WriteLine($"Updating SpaceShip: {spaceShip.Name} (ID: {spaceShip.Id})");
+
+            Console.Write($"Enter new Name (leave blank to keep '{spaceShip.Name}'): ");
+            var name = Console.ReadLine();
+            if (!string.IsNullOrWhiteSpace(name))
+            {
+                spaceShip.Name = name;
+            }
+
+            Console.Write($"Enter new Type ({string.Join(", ", Enum.GetNames(typeof(SpaceShip.SpaceShipType)))}): ");
+            var typeInput = Console.ReadLine();
+            if (Enum.TryParse(typeInput, out SpaceShip.SpaceShipType newType))
+            {
+                spaceShip.Type = newType;
+            }
+
+            Console.Write($"Enter new CrewCount (leave blank to keep '{spaceShip.CrewCount}'): ");
+            if (int.TryParse(Console.ReadLine(), out int crewCount))
+            {
+                spaceShip.CrewCount = crewCount;
+            }
+
+            Console.Write($"Enter new Status ({string.Join(", ", Enum.GetNames(typeof(SpaceShip.SpaceShipStatus)))}): ");
+            var statusInput = Console.ReadLine();
+            if (Enum.TryParse(statusInput, out SpaceShip.SpaceShipStatus newStatus))
+            {
+                spaceShip.Status = newStatus;
+            }
+
+            // Save changes
+            var success = spaceShipService.UpdateSpaceShip(spaceShip);
+            if (success)
+            {
+                Console.WriteLine("SpaceShip updated successfully!");
+            }
+            else
+            {
+                Console.WriteLine("Failed to update SpaceShip.");
+            }
+
+            Console.WriteLine("Press any key to return to the menu...");
+            Console.ReadKey();
+        }
+        static void UpdatePlanet()
+        {
+            Console.Clear();
+            Console.WriteLine("=== Update Planet ===");
+
+            Console.Write("Enter Planet ID to update: ");
+            if (!int.TryParse(Console.ReadLine(), out int id))
+            {
+                Console.WriteLine("Invalid ID! Press any key to return to the menu...");
+                Console.ReadKey();
+                return;
+            }
+
+            var planetService = new PlanetService();
+            var planet = planetService.GetPlanetById(id);
+
+            if (planet == null)
+            {
+                Console.WriteLine("Planet not found! Press any key to return to the menu...");
+                Console.ReadKey();
+                return;
+            }
+
+            Console.WriteLine($"Updating Planet: {planet.Name} (ID: {planet.Id})");
+
+            Console.Write($"Enter new Name (leave blank to keep '{planet.Name}'): ");
+            var name = Console.ReadLine();
+            if (!string.IsNullOrWhiteSpace(name))
+            {
+                planet.Name = name;
+            }
+
+            Console.Write($"Enter new Type ({string.Join(", ", Enum.GetNames(typeof(Planet.PlanetType)))}): ");
+            var typeInput = Console.ReadLine();
+            if (Enum.TryParse(typeInput, out Planet.PlanetType newType))
+            {
+                planet.Type = newType;
+            }
+
+            // Save changes
+            var success = planetService.UpdatePlanet(planet);
+            if (success)
+            {
+                Console.WriteLine("Planet updated successfully!");
+            }
+            else
+            {
+                Console.WriteLine("Failed to update Planet.");
+            }
+
+            Console.WriteLine("Press any key to return to the menu...");
+            Console.ReadKey();
+        }
+
+        static void UpdateCrewMember()
+        {
+            Console.Clear();
+            Console.WriteLine("=== Update CrewMember ===");
+
+            Console.Write("Enter CrewMember ID to update: ");
+            if (!int.TryParse(Console.ReadLine(), out int id))
+            {
+                Console.WriteLine("Invalid ID! Press any key to return to the menu...");
+                Console.ReadKey();
+                return;
+            }
+
+            var crewMemberService = new CrewMemberService();
+            var crewMember = crewMemberService.GetCrewMemberById(id);
+
+            if (crewMember == null)
+            {
+                Console.WriteLine("CrewMember not found! Press any key to return to the menu...");
+                Console.ReadKey();
+                return;
+            }
+
+            Console.WriteLine($"Updating CrewMember: {crewMember.Name} (ID: {crewMember.Id})");
+
+            Console.Write($"Enter new Name (leave blank to keep '{crewMember.Name}'): ");
+            var name = Console.ReadLine();
+            if (!string.IsNullOrWhiteSpace(name))
+            {
+                crewMember.Name = name;
+            }
+
+            Console.Write($"Enter new Rank ({string.Join(", ", Enum.GetNames(typeof(CrewMember.CrewMemberRank)))}): ");
+            var rankInput = Console.ReadLine();
+            if (Enum.TryParse(rankInput, out CrewMember.CrewMemberRank newRank))
+            {
+                crewMember.Rank = newRank;
+            }
+
+            Console.Write($"Enter new MissionCount (leave blank to keep '{crewMember.MissionCount}'): ");
+            if (int.TryParse(Console.ReadLine(), out int missionCount))
+            {
+                crewMember.MissionCount = missionCount;
+            }
+
+            // Save changes
+            var success = crewMemberService.UpdateCrewMember(crewMember);
+            if (success)
+            {
+                Console.WriteLine("CrewMember updated successfully!");
+            }
+            else
+            {
+                Console.WriteLine("Failed to update CrewMember.");
+            }
+
+            Console.WriteLine("Press any key to return to the menu...");
+            Console.ReadKey();
+        }
+
+        static void UpdateMission()
+        {
+            Console.Clear();
+            Console.WriteLine("=== Update Mission ===");
+
+            Console.Write("Enter Mission ID to update: ");
+            if (!int.TryParse(Console.ReadLine(), out int id))
+            {
+                Console.WriteLine("Invalid ID! Press any key to return to the menu...");
+                Console.ReadKey();
+                return;
+            }
+
+            var missionService = new MissionService();
+            var mission = missionService.GetMissionById(id);
+
+            if (mission == null)
+            {
+                Console.WriteLine("Mission not found! Press any key to return to the menu...");
+                Console.ReadKey();
+                return;
+            }
+
+            Console.WriteLine($"Updating Mission: {mission.Id}");
+
+            Console.Write($"Enter new TargetPlanetId (leave blank to keep '{mission.TargetPlanetId}'): ");
+            if (int.TryParse(Console.ReadLine(), out int targetPlanetId))
+            {
+                mission.TargetPlanetId = targetPlanetId;
+            }
+
+            Console.Write($"Enter new StartDate (yyyy-MM-dd) (leave blank to keep '{mission.StartDate}'): ");
+            var startDateInput = Console.ReadLine();
+            if (DateTime.TryParse(startDateInput, out DateTime startDate))
+            {
+                mission.StartDate = startDate;
+            }
+
+            Console.Write($"Enter new EndDate (yyyy-MM-dd) (leave blank to keep '{mission.EndDate}'): ");
+            var endDateInput = Console.ReadLine();
+            if (DateTime.TryParse(endDateInput, out DateTime endDate))
+            {
+                mission.EndDate = endDate;
+            }
+
+            Console.Write($"Enter new Status ({string.Join(", ", Enum.GetNames(typeof(Mission.MissionStatus)))}): ");
+            var statusInput = Console.ReadLine();
+            if (Enum.TryParse(statusInput, out Mission.MissionStatus newStatus))
+            {
+                mission.Status = newStatus;
+            }
+
+            // Save changes
+            var success = missionService.UpdateMission(mission);
+            if (success)
+            {
+                Console.WriteLine("Mission updated successfully!");
+            }
+            else
+            {
+                Console.WriteLine("Failed to update Mission.");
+            }
+
+            Console.WriteLine("Press any key to return to the menu...");
+            Console.ReadKey();
+        }
+
 
         static void DeleteSpaceShip()
         {
@@ -766,6 +1009,7 @@ namespace R6UHP1_HSZF_2024251.Console
             System.Console.WriteLine("Press any key to return to the menu...");
             System.Console.ReadKey();
         }
+
 
         static void DeletePlanet()
         {

@@ -32,28 +32,36 @@ namespace R6UHP1_HSZF_2024251.Application.Services
         }
 
 
-        public void UpdateSpaceShip(int spaceShipId, Action<SpaceShip> updateAction)
+        public SpaceShip? GetSpaceShipById(int id)
         {
             using (var context = new StarTrekDbContext())
             {
-                var spaceShip = context.SpaceShips.Find(spaceShipId);
-                if (spaceShip != null)
+                // Lekérdezi az űrhajót az ID alapján
+                return context.SpaceShips.FirstOrDefault(s => s.Id == id);
+            }
+        }
+
+        public bool UpdateSpaceShip(SpaceShip spaceShip)
+        {
+            using (var context = new StarTrekDbContext())
+            {
+                var existingSpaceShip = context.SpaceShips.FirstOrDefault(s => s.Id == spaceShip.Id);
+
+                if (existingSpaceShip == null)
                 {
-                    try
-                    {
-                        updateAction(spaceShip); // A frissítési logika kívülről érkezik
-                        context.SaveChanges();
-                        Console.WriteLine("SpaceShip updated successfully.");
-                    }
-                    catch (Exception ex)
-                    {
-                        Console.WriteLine($"Failed to update SpaceShip: {ex.Message}");
-                    }
+                    // Ha az űrhajó nem található
+                    return false;
                 }
-                else
-                {
-                    Console.WriteLine("SpaceShip not found.");
-                }
+
+                // Frissítjük a létező SpaceShip mezőit
+                existingSpaceShip.Name = spaceShip.Name;
+                existingSpaceShip.Type = spaceShip.Type;
+                existingSpaceShip.CrewCount = spaceShip.CrewCount;
+                existingSpaceShip.Status = spaceShip.Status;
+
+                // Adatbázis mentése
+                context.SaveChanges();
+                return true;
             }
         }
 

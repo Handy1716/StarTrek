@@ -62,28 +62,35 @@ namespace R6UHP1_HSZF_2024251.Application.Services
                 }
             }
         }
-        public void UpdateCrewMember(int crewMemberId, Action<CrewMember> updateAction)
+        public CrewMember? GetCrewMemberById(int id)
         {
             using (var context = new StarTrekDbContext())
             {
-                var crewMember = context.CrewMembers.Find(crewMemberId);
-                if (crewMember != null)
+                // Lekérdezi a legénységi tagot az ID alapján
+                return context.CrewMembers.FirstOrDefault(cm => cm.Id == id);
+            }
+        }
+
+        public bool UpdateCrewMember(CrewMember crewMember)
+        {
+            using (var context = new StarTrekDbContext())
+            {
+                var existingCrewMember = context.CrewMembers.FirstOrDefault(cm => cm.Id == crewMember.Id);
+
+                if (existingCrewMember == null)
                 {
-                    try
-                    {
-                        updateAction(crewMember); // Frissítési logika kívülről érkezik
-                        context.SaveChanges();
-                        OnOperationCompleted?.Invoke("CrewMember updated successfully.");
-                    }
-                    catch (Exception ex)
-                    {
-                        OnOperationCompleted?.Invoke($"Failed to update CrewMember: {ex.Message}");
-                    }
+                    // Ha a legénységi tag nem található
+                    return false;
                 }
-                else
-                {
-                    OnOperationCompleted?.Invoke("CrewMember not found.");
-                }
+
+                // Frissítjük a legénységi tag mezőit
+                existingCrewMember.Name = crewMember.Name;
+                existingCrewMember.Rank = crewMember.Rank;
+                existingCrewMember.MissionCount = crewMember.MissionCount;
+
+                // Adatbázis mentése
+                context.SaveChanges();
+                return true;
             }
         }
         public List<CrewMember> GetAllCrewMembers()
