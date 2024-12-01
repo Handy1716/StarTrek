@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace R6UHP1_HSZF_2024251.Application.Services
 {
-    public class MissionService
+    public class MissionService : BaseService
     {
         // Delegált az eseményhez
         public delegate void OperationEventHandler(string message);
@@ -138,6 +138,14 @@ namespace R6UHP1_HSZF_2024251.Application.Services
                 return context.Missions
                     .Where(m => m.Status == status)
                     .ToList();
+            }
+        }
+        public List<Mission> GetPagedMissions(int pageNumber, int pageSize)
+        {
+            using (var context = new StarTrekDbContext())
+            {
+                var query = context.Missions.OrderBy(m => m.StartDate);
+                return GetPagedResults(query, pageNumber, pageSize);
             }
         }
     }

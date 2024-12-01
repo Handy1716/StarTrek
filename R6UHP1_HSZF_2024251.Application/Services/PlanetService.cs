@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace R6UHP1_HSZF_2024251.Application.Services
 {
-    public class PlanetService
+    public class PlanetService : BaseService
     {
         // Delegált az eseményhez
         public delegate void OperationEventHandler(string message);
@@ -88,6 +88,15 @@ namespace R6UHP1_HSZF_2024251.Application.Services
                 {
                     OnOperationCompleted?.Invoke("Planet not found.");
                 }
+            }
+        }
+
+        public List<Planet> GetPagedPlanets(int pageNumber, int pageSize)
+        {
+            using (var context = new StarTrekDbContext())
+            {
+                var query = context.Planets.OrderBy(p => p.Name);
+                return GetPagedResults(query, pageNumber, pageSize);
             }
         }
     }
