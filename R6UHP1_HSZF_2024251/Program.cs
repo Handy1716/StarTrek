@@ -102,7 +102,7 @@ namespace R6UHP1_HSZF_2024251.Console
             Console.WriteLine("2. List Planets");
             Console.WriteLine("3. List CrewMembers");
             Console.WriteLine("4. List Missions");
-            Console.WriteLine("5. Name or Status");
+            Console.WriteLine("5. List SpaceShips by name or status");
             Console.WriteLine("6. Back to Main Menu");
             Console.Write("Please select an option: ");
 
@@ -123,7 +123,7 @@ namespace R6UHP1_HSZF_2024251.Console
                     ListPagedMissions();
                     break;
                 case "5":
-                    NameAndStatus();
+                    ListPagedSpaceShipsByNameOrStatus();
                     break;
                 case "6":
                     return;
@@ -661,7 +661,80 @@ namespace R6UHP1_HSZF_2024251.Console
             }
         }
 
-        static void NameAndStatus() { }
+        static void ListPagedSpaceShipsByNameOrStatus()
+        {
+            int pageNumber = 1;
+            const int pageSize = 5;
+
+            Console.Clear();
+            Console.Write("Enter Name or Status to filter SpaceShips: ");
+            var nameOrStatus = Console.ReadLine();
+
+            if (string.IsNullOrWhiteSpace(nameOrStatus))
+            {
+                Console.WriteLine("Invalid input! Press any key to return to the menu...");
+                Console.ReadKey();
+                return;
+            }
+
+            var spaceShipService = new SpaceShipService();
+
+            // Ellenőrizzük, hogy a megadott érték megfelel-e az enum valamelyik értékének
+            SpaceShip.SpaceShipStatus? statusFilter = null;
+            if (Enum.TryParse(nameOrStatus, true, out SpaceShip.SpaceShipStatus parsedStatus))
+            {
+                statusFilter = parsedStatus;
+            }
+
+            while (true)
+            {
+                Console.Clear();
+
+                // Adatok lekérdezése
+                var spaceShips = statusFilter.HasValue
+                    ? spaceShipService.GetPagedSpaceShipsByNameOrStatus(pageNumber, pageSize, statusFilter.Value.ToString())
+                    : spaceShipService.GetPagedSpaceShipsByNameOrStatus(pageNumber, pageSize, nameOrStatus);
+
+                if (!spaceShips.Any())
+                {
+                    Console.WriteLine("No matching data found.");
+                    Console.WriteLine("Press any key to return to the menu...");
+                    Console.ReadKey();
+                    return; // Visszalépés a menübe
+                }
+
+                Console.WriteLine($"=== Filtered SpaceShips by '{nameOrStatus}' (Page {pageNumber}) ===");
+                foreach (var ship in spaceShips)
+                {
+                    Console.WriteLine($"ID: {ship.Id}, Name: {ship.Name}, Type: {ship.Type}, CrewCount: {ship.CrewCount}, Status: {ship.Status}, PlanetId: {ship.PlanetId}");
+                }
+
+                Console.WriteLine("\nOptions:");
+                Console.WriteLine("[n] Next Page");
+                Console.WriteLine("[p] Previous Page");
+                Console.WriteLine("[b] Back to Read Menu");
+
+                var input = Console.ReadKey().KeyChar;
+
+                if (input == 'n')
+                {
+                    pageNumber++;
+                }
+                else if (input == 'p' && pageNumber > 1)
+                {
+                    pageNumber--;
+                }
+                else if (input == 'b')
+                {
+                    return; // Visszalépés a Read menübe
+                }
+                else
+                {
+                    Console.WriteLine("\nInvalid option! Press any key to continue...");
+                    Console.ReadKey();
+                }
+            }
+        }
 
         static void UpdateSpaceShip() { /* Implement SpaceShip update */ }
         static void UpdatePlanet() { /* Implement Planet update */ }

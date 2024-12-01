@@ -197,9 +197,10 @@ namespace R6UHP1_HSZF_2024251.Application.Services
         {
             using (var context = new StarTrekDbContext())
             {
+                // Szűrés névre vagy státuszra
                 var query = context.SpaceShips
                     .Where(s => s.Name.Contains(nameOrStatus) ||
-                                s.Status.ToString().Equals(nameOrStatus, StringComparison.OrdinalIgnoreCase))
+                                s.Status.ToString() == nameOrStatus) // Nem használunk StringComparison-t
                     .OrderBy(s => s.Name);
 
                 return GetPagedResults(query, pageNumber, pageSize);
