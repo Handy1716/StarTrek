@@ -39,7 +39,8 @@ namespace R6UHP1_HSZF_2024251.Persistence.MsSql.Infrastructure.Entities
             Commander,    // Parancsnok
             Lieutenant,   // Hadnagy
             Ensign,       // Zászlós
-            Cadet         // Kadét
+            Cadet,        // Kadét
+            FirstOfficer
         }
     }
 }

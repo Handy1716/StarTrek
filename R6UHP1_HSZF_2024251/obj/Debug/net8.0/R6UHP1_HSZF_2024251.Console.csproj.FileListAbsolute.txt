@@ -81,3 +81,4 @@ C:\Users\polga\source\repos\R6UHP1_HSZF_2024251\R6UHP1_HSZF_2024251\obj\Debug\ne
 C:\Users\polga\source\repos\R6UHP1_HSZF_2024251\R6UHP1_HSZF_2024251\obj\Debug\net8.0\R6UHP1_HSZF_2024251.Console.pdb
 C:\Users\polga\source\repos\R6UHP1_HSZF_2024251\R6UHP1_HSZF_2024251\obj\Debug\net8.0\R6UHP1_HSZF_2024251.Console.genruntimeconfig.cache
 C:\Users\polga\source\repos\R6UHP1_HSZF_2024251\R6UHP1_HSZF_2024251\obj\Debug\net8.0\ref\R6UHP1_HSZF_2024251.Console.dll
+C:\Users\polga\source\repos\R6UHP1_HSZF_2024251\R6UHP1_HSZF_2024251\bin\Debug\net8.0\StarTrekData2.xml

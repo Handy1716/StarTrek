@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<qeylIS>
+  <ghIlghameS>
+    <chu>1</chu>
+    <pong>USS Enterprise</pong>
+    <Segh>Explorer</Segh>
+    <pevIl>100</pevIl>
+    <Dotlh>Active</Dotlh>
+    <yuQHa>1</yuQHa>
+  </ghIlghameS>
+  <ghIlghameS>
+    <chu>2</chu>
+    <pong>USS Voyager</pong>
+    <Segh>Research</Segh>
+    <pevIl>120</pevIl>
+    <Dotlh>Inactive</Dotlh>
+    <yuQHa>2</yuQHa>
+  </ghIlghameS>
+  <ghIlghameS>
+    <chu>3</chu>
+    <pong>USS Defiant</pong>
+    <Segh>Fighter</Segh>
+    <pevIl>50</pevIl>
+    <Dotlh>Active</Dotlh>
+    <yuQHa>3</yuQHa>
+  </ghIlghameS>
+  <ghIlghameS>
+    <chu>4</chu>
+    <pong>USS Discovery</pong>
+    <Segh>Medical</Segh>
+    <pevIl>80</pevIl>
+    <Dotlh>Active</Dotlh>
+    <yuQHa>4</yuQHa>
+  </ghIlghameS>
+  <ghIlghameS>
+    <chu>5</chu>
+    <pong>USS Titan</pong>
+    <Segh>Cargo</Segh>
+    <pevIl>200</pevIl>
+    <Dotlh>Inactive</Dotlh>
+    <yuQHa>5</yuQHa>
+  </ghIlghameS>
+</qeylIS>

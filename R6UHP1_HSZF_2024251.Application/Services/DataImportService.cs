@@ -1,18 +1,18 @@
 ﻿using System.Xml.Linq;
 using System.Collections.Generic;
 using System.Linq;
-using R6UHP1_HSZF_2024251.Persistence.MsSql.Infrastructure.Entities;
+using R6UHP1_HSZF_2024251.Model.Entities;
 using System.Xml.Serialization;
 using Microsoft.Extensions.Options;
 using R6UHP1_HSZF_2024251.Persistence.MsSql.Infrastructure.Contexts;
-using static R6UHP1_HSZF_2024251.Persistence.MsSql.Infrastructure.Entities.Planet;
+using static R6UHP1_HSZF_2024251.Model.Entities.Planet;
 namespace R6UHP1_HSZF_2024251.Persistence.MsSql.Infrastructure.Services
 {
     public class DataImportService
     {
         public void ReadIn()
         {
-            XDocument xdoc = XDocument.Load("StarTrekData.xml");
+            XDocument xdoc = XDocument.Load("StarTrekData2.xml");
             var spaceships = xdoc.Descendants("Spaceship").Select(x =>
             {
                 var newSpaceShip = new SpaceShip

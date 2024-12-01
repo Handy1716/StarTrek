@@ -1,5 +1,5 @@
 ﻿using R6UHP1_HSZF_2024251.Persistence.MsSql.Infrastructure.Contexts;
-using R6UHP1_HSZF_2024251.Persistence.MsSql.Infrastructure.Entities;
+using R6UHP1_HSZF_2024251.Model.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;

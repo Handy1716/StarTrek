@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StarTrekData>
+  <Spaceships>
+    <Spaceship>
+      <Id>1</Id>
+      <Name>USS Enterprise</Name>
+      <Type>Explorer</Type>
+      <CrewCount>100</CrewCount>
+      <Status>Active</Status>
+      <PlanetId>1</PlanetId>
+    </Spaceship>
+    <Spaceship>
+      <Id>2</Id>
+      <Name>USS Voyager</Name>
+      <Type>Research</Type>
+      <CrewCount>120</CrewCount>
+      <Status>Inactive</Status>
+      <PlanetId>2</PlanetId>
+    </Spaceship>
+    <Spaceship>
+      <Id>3</Id>
+      <Name>USS Defiant</Name>
+      <Type>Fighter</Type>
+      <CrewCount>50</CrewCount>
+      <Status>Active</Status>
+      <PlanetId>3</PlanetId>
+    </Spaceship>
+    <Spaceship>
+      <Id>4</Id>
+      <Name>USS Discovery</Name>
+      <Type>Medical</Type>
+      <CrewCount>80</CrewCount>
+      <Status>Active</Status>
+      <PlanetId>4</PlanetId>
+    </Spaceship>
+    <Spaceship>
+      <Id>5</Id>
+      <Name>USS Titan</Name>
+      <Type>Cargo</Type>
+      <CrewCount>200</CrewCount>
+      <Status>Inactive</Status>
+      <PlanetId>5</PlanetId>
+    </Spaceship>
+  </Spaceships>
+
+  <Planets>
+    <Planet>
+      <Id>1</Id>
+      <Name>Earth</Name>
+      <Type>Terrestrial</Type>
+      <ExplorationShipId>1</ExplorationShipId>
+    </Planet>
+    <Planet>
+      <Id>2</Id>
+      <Name>Vulcan</Name>
+      <Type>Terrestrial</Type>
+      <ExplorationShipId>2</ExplorationShipId>
+    </Planet>
+    <Planet>
+      <Id>3</Id>
+      <Name>Qo'noS</Name>
+      <Type>Terrestrial</Type>
+      <ExplorationShipId>3</ExplorationShipId>
+    </Planet>
+    <Planet>
+      <Id>4</Id>
+      <Name>Andoria</Name>
+      <Type>Ice</Type>
+      <ExplorationShipId>4</ExplorationShipId>
+    </Planet>
+    <Planet>
+      <Id>5</Id>
+      <Name>Bajor</Name>
+      <Type>Terrestrial</Type>
+      <ExplorationShipId>5</ExplorationShipId>
+    </Planet>
+  </Planets>
+
+  <CrewMembers>
+    <CrewMember>
+      <Id>1</Id>
+      <Name>James Kirk</Name>
+      <Rank>Captain</Rank>
+      <SpaceshipId>1</SpaceshipId>
+      <MissionCount>5</MissionCount>
+    </CrewMember>
+    <CrewMember>
+      <Id>2</Id>
+      <Name>Jean-Luc Picard</Name>
+      <Rank>Captain</Rank>
+      <SpaceshipId>2</SpaceshipId>
+      <MissionCount>7</MissionCount>
+    </CrewMember>
+    <CrewMember>
+      <Id>3</Id>
+      <Name>Benjamin Sisko</Name>
+      <Rank>Commander</Rank>
+      <SpaceshipId>3</SpaceshipId>
+      <MissionCount>4</MissionCount>
+    </CrewMember>
+    <CrewMember>
+      <Id>4</Id>
+      <Name>Kathryn Janeway</Name>
+      <Rank>Captain</Rank>
+      <SpaceshipId>4</SpaceshipId>
+      <MissionCount>9</MissionCount>
+    </CrewMember>
+    <CrewMember>
+      <Id>5</Id>
+      <Name>Spock</Name>
+      <Rank>FirstOfficer</Rank>
+      <SpaceshipId>1</SpaceshipId>
+      <MissionCount>3</MissionCount>
+    </CrewMember>
+  </CrewMembers>
+
+  <Missions>
+    <Mission>
+      <Id>1</Id>
+      <TargetPlanetId>1</TargetPlanetId>
+      <StartDate>2024-01-01</StartDate>
+      <EndDate>2024-01-10</EndDate>
+      <Status>Completed</Status>
+    </Mission>
+    <Mission>
+      <Id>2</Id>
+      <TargetPlanetId>2</TargetPlanetId>
+      <StartDate>2024-01-15</StartDate>
+      <EndDate>2024-01-20</EndDate>
+      <Status>Completed</Status>
+    </Mission>
+    <Mission>
+      <Id>3</Id>
+      <TargetPlanetId>3</TargetPlanetId>
+      <StartDate>2024-01-25</StartDate>
+      <EndDate>2024-01-30</EndDate>
+      <Status>InProgress</Status>
+    </Mission>
+    <Mission>
+      <Id>4</Id>
+      <TargetPlanetId>4</TargetPlanetId>
+      <StartDate>2024-02-01</StartDate>
+      <EndDate>2024-02-10</EndDate>
+      <Status>Completed</Status>
+    </Mission>
+    <Mission>
+      <Id>5</Id>
+      <TargetPlanetId>5</TargetPlanetId>
+      <StartDate>2024-02-15</StartDate>
+      <EndDate>2024-02-25</EndDate>
+      <Status>InProgress</Status>
+    </Mission>
+  </Missions>
+</StarTrekData>

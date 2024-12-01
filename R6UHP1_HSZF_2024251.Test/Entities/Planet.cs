@@ -31,7 +31,8 @@ namespace R6UHP1_HSZF_2024251.Persistence.MsSql.Infrastructure.Entities
             GasGiant,
             IceGiant,
             Dwarf,
-            Exotic
+            Exotic,
+            Ice
         }
     }
 }

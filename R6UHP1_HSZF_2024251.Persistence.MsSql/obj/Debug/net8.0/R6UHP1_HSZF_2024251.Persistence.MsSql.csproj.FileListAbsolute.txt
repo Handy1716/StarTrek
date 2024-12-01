@@ -4,7 +4,6 @@ C:\Users\polga\source\repos\R6UHP1_HSZF_2024251\R6UHP1_HSZF_2024251.Persistence.
 C:\Users\polga\source\repos\R6UHP1_HSZF_2024251\R6UHP1_HSZF_2024251.Persistence.MsSql\obj\Debug\net8.0\R6UHP1_HSZF_2024251.Persistence.MsSql.AssemblyInfo.cs
 C:\Users\polga\source\repos\R6UHP1_HSZF_2024251\R6UHP1_HSZF_2024251.Persistence.MsSql\obj\Debug\net8.0\R6UHP1_HSZF_2024251.Persistence.MsSql.csproj.CoreCompileInputs.cache
 C:\Users\polga\source\repos\R6UHP1_HSZF_2024251\R6UHP1_HSZF_2024251.Persistence.MsSql\obj\Debug\net8.0\R6UHP1_HSZF_2024251.Persistence.MsSql.sourcelink.json
-C:\Users\polga\source\repos\R6UHP1_HSZF_2024251\R6UHP1_HSZF_2024251.Persistence.MsSql\bin\Debug\net8.0\StarTrekData.xml
 C:\Users\polga\source\repos\R6UHP1_HSZF_2024251\R6UHP1_HSZF_2024251.Persistence.MsSql\bin\Debug\net8.0\R6UHP1_HSZF_2024251.Persistence.MsSql.deps.json
 C:\Users\polga\source\repos\R6UHP1_HSZF_2024251\R6UHP1_HSZF_2024251.Persistence.MsSql\bin\Debug\net8.0\R6UHP1_HSZF_2024251.Persistence.MsSql.runtimeconfig.json
 C:\Users\polga\source\repos\R6UHP1_HSZF_2024251\R6UHP1_HSZF_2024251.Persistence.MsSql\bin\Debug\net8.0\R6UHP1_HSZF_2024251.Persistence.MsSql.dll

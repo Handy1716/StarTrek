@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace R6UHP1_HSZF_2024251.Persistence.MsSql.Infrastructure.Atributes
+namespace R6UHP1_HSZF_2024251.Model.Atributes
 {
     using System;
 

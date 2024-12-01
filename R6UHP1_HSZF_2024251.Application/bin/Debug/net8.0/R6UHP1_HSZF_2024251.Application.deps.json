@@ -663,6 +663,11 @@
         }
       },
       "R6UHP1_HSZF_2024251.Model/1.0.0": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "9.0.0",
+          "Microsoft.EntityFrameworkCore.Proxies": "9.0.0",
+          "Microsoft.EntityFrameworkCore.SqlServer": "9.0.0"
+        },
         "runtime": {
           "R6UHP1_HSZF_2024251.Model.dll": {
             "assemblyVersion": "1.0.0",

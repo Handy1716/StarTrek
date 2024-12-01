@@ -1,12 +1,12 @@
 ﻿using R6UHP1_HSZF_2024251.Application.Services;
 using R6UHP1_HSZF_2024251.Persistence.MsSql.Infrastructure.Contexts;
-using R6UHP1_HSZF_2024251.Persistence.MsSql.Infrastructure.Entities;
+using R6UHP1_HSZF_2024251.Model.Entities;
 using R6UHP1_HSZF_2024251.Persistence.MsSql.Infrastructure.Services;
 using System.Xml.Linq;
-using static R6UHP1_HSZF_2024251.Persistence.MsSql.Infrastructure.Entities.CrewMember;
-using static R6UHP1_HSZF_2024251.Persistence.MsSql.Infrastructure.Entities.Mission;
-using static R6UHP1_HSZF_2024251.Persistence.MsSql.Infrastructure.Entities.Planet;
-using static R6UHP1_HSZF_2024251.Persistence.MsSql.Infrastructure.Entities.SpaceShip;
+using static R6UHP1_HSZF_2024251.Model.Entities.CrewMember;
+using static R6UHP1_HSZF_2024251.Model.Entities.Mission;
+using static R6UHP1_HSZF_2024251.Model.Entities.Planet;
+using static R6UHP1_HSZF_2024251.Model.Entities.SpaceShip;
 using Console = System.Console;
 
 namespace R6UHP1_HSZF_2024251.Console
@@ -28,7 +28,8 @@ namespace R6UHP1_HSZF_2024251.Console
                 Console.WriteLine("2. Read");
                 Console.WriteLine("3. Update");
                 Console.WriteLine("4. Delete");
-                Console.WriteLine("5. Exit");
+                Console.WriteLine("5. Generate Klingon XML");
+                Console.WriteLine("6. Exit");
                 Console.Write("Please select an option: ");
 
                 var choice = Console.ReadLine();
@@ -48,6 +49,9 @@ namespace R6UHP1_HSZF_2024251.Console
                         HandleDelete();
                         break;
                     case "5":
+                        GenerateKlingonXmlMenu();
+                        break;
+                    case "6":
                         exit = true;
                         Console.WriteLine("Exiting...");
                         break;
@@ -204,6 +208,40 @@ namespace R6UHP1_HSZF_2024251.Console
                     Console.ReadKey();
                     break;
             }
+        }
+        static void GenerateKlingonXmlMenu()
+        {
+            Console.Clear();
+            Console.WriteLine("=== Generate Klingon XML ===");
+
+            var spaceShipService = new SpaceShipService();
+
+            Console.WriteLine("Klingon XML generating..");
+            var filePath = "Klingon XML.xml";
+
+            using (var context = new StarTrekDbContext())
+            {
+                var spaceShips = context.SpaceShips.ToList();
+                if (spaceShips.Count == 0)
+                {
+                    Console.WriteLine("No spaceships found in the database.");
+                }
+                else
+                {
+                    try
+                    {
+                        spaceShipService.GenerateKlingonXml(filePath, spaceShips);
+                        Console.WriteLine($"Klingon XML file generated successfully at {filePath}.");
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine($"An error occurred: {ex.Message}");
+                    }
+                }
+            }
+
+            Console.WriteLine("Press any key to return to the main menu...");
+            Console.ReadKey();
         }
 
         // CRUD methods implementation

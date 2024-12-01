@@ -4,7 +4,6 @@ C:\Users\polga\source\repos\R6UHP1_HSZF_2024251\R6UHP1_HSZF_2024251.Application\
 C:\Users\polga\source\repos\R6UHP1_HSZF_2024251\R6UHP1_HSZF_2024251.Application\obj\Debug\net8.0\R6UHP1_HSZF_2024251.Application.AssemblyInfo.cs
 C:\Users\polga\source\repos\R6UHP1_HSZF_2024251\R6UHP1_HSZF_2024251.Application\obj\Debug\net8.0\R6UHP1_HSZF_2024251.Application.csproj.CoreCompileInputs.cache
 C:\Users\polga\source\repos\R6UHP1_HSZF_2024251\R6UHP1_HSZF_2024251.Application\obj\Debug\net8.0\R6UHP1_HSZF_2024251.Application.sourcelink.json
-C:\Users\polga\source\repos\R6UHP1_HSZF_2024251\R6UHP1_HSZF_2024251.Application\bin\Debug\net8.0\StarTrekData.xml
 C:\Users\polga\source\repos\R6UHP1_HSZF_2024251\R6UHP1_HSZF_2024251.Application\bin\Debug\net8.0\R6UHP1_HSZF_2024251.Application.deps.json
 C:\Users\polga\source\repos\R6UHP1_HSZF_2024251\R6UHP1_HSZF_2024251.Application\bin\Debug\net8.0\R6UHP1_HSZF_2024251.Application.dll
 C:\Users\polga\source\repos\R6UHP1_HSZF_2024251\R6UHP1_HSZF_2024251.Application\bin\Debug\net8.0\R6UHP1_HSZF_2024251.Application.pdb
