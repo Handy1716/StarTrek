@@ -47,15 +47,15 @@ namespace R6UHP1_HSZF_2024251.Console
             ////-------------
 
             //SpaceShipKlingon
-            //var spaceShips = new List<SpaceShip>
-            //    {
-            //    new SpaceShip { Id = 1, Name = "USS Enterprise", Type = SpaceShip.SpaceShipType.Explorer, CrewCount = 100, Status = SpaceShip.SpaceShipStatus.Active, PlanetId = 1 },
-            //    new SpaceShip { Id = 2, Name = "USS Voyager", Type = SpaceShip.SpaceShipType.Medical, CrewCount = 150, Status = SpaceShip.SpaceShipStatus.Inactive, PlanetId = null }
-            //    };
+            var spaceShips = new List<SpaceShip>
+                {
+                new SpaceShip { Id = 1, Name = "USSEnterprise", Type = SpaceShip.SpaceShipType.Explorer, CrewCount = 100, Status = SpaceShip.SpaceShipStatus.Active, PlanetId = 1 },
+                new SpaceShip { Id = 2, Name = "USSVoyager", Type = SpaceShip.SpaceShipType.Medical, CrewCount = 150, Status = SpaceShip.SpaceShipStatus.Inactive, PlanetId = null }
+                };
 
-            //// Riport generálása
-            //string filePath = "SpaceShipKlingonReport.xml";
-            //spaceShipService.GenerateKlingonXml(filePath, spaceShips);
+            // Riport generálása
+            string filePath = "SpaceShipKlingonReport.xml";
+            spaceShipService.GenerateKlingonXml(filePath, spaceShips);
 
             //Paged();
             //foreach (var ship in activeShips)

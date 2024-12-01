@@ -117,35 +117,34 @@ namespace R6UHP1_HSZF_2024251.Application.Services
         }
         public void GenerateKlingonXml(string filePath, List<SpaceShip> spaceShips)
         {
-            // Gyökér elem az osztály attribútuma alapján
-            var rootAttribute = (KlingonTranslationAttribute)Attribute.GetCustomAttribute(typeof(SpaceShip), typeof(KlingonTranslationAttribute));
-            var rootElement = new XElement(rootAttribute.Translation);
+            var rootElement = new XElement("qeylIS");
 
             foreach (var spaceShip in spaceShips)
             {
-                // SpaceShip elem
-                var classAttribute = (KlingonTranslationAttribute)Attribute.GetCustomAttribute(typeof(SpaceShip), typeof(KlingonTranslationAttribute));
                 var shipElement = new XElement("ghIlghameS");
 
-                // Property-k bejárása
                 foreach (var prop in typeof(SpaceShip).GetProperties())
                 {
                     var propAttribute = (KlingonTranslationAttribute)Attribute.GetCustomAttribute(prop, typeof(KlingonTranslationAttribute));
                     if (propAttribute != null)
                     {
+                        // Szűrés az XML címkéknél
+                        var sanitizedName = SanitizeXmlName(propAttribute.Translation);
                         var value = prop.GetValue(spaceShip)?.ToString() ?? "null";
-                        shipElement.Add(new XElement(propAttribute.Translation, value));
+                        shipElement.Add(new XElement(sanitizedName, value));
                     }
                 }
 
                 rootElement.Add(shipElement);
             }
 
-            // XML fájl mentése
-            var xDocument = new XDocument(rootElement);
-            xDocument.Save(filePath);
-
-            Console.WriteLine($"Klingon XML generated successfully at: {filePath}");
+            rootElement.Save(filePath);
+            Console.WriteLine($"Report generated successfully at: {filePath}");
+        }
+        public static string SanitizeXmlName(string name)
+        {
+            // Csere: távolítsa el az érvénytelen karaktereket
+            return new string(name.Where(c => char.IsLetterOrDigit(c) || c == '_').ToArray());
         }
         public List<SpaceShip> GetAllSpaceShips()
         {

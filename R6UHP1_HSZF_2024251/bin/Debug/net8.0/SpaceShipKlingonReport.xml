@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<qeylIS>
+  <ghIlghameS>
+    <chu>1</chu>
+    <pong>USSEnterprise</pong>
+    <Segh>Explorer</Segh>
+    <pevIl>100</pevIl>
+    <Dotlh>Active</Dotlh>
+    <yuQHa>1</yuQHa>
+  </ghIlghameS>
+  <ghIlghameS>
+    <chu>2</chu>
+    <pong>USSVoyager</pong>
+    <Segh>Medical</Segh>
+    <pevIl>150</pevIl>
+    <Dotlh>Inactive</Dotlh>
+    <yuQHa>null</yuQHa>
+  </ghIlghameS>
+</qeylIS>

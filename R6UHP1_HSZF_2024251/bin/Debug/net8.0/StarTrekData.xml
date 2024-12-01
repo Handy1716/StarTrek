@@ -34,7 +34,7 @@
   <CrewMembers>
     <CrewMember>
       <Id>1</Id>
-      <Name>James T. Kirk</Name>
+      <Name>James Kirk</Name>
       <Rank>Captain</Rank>
       <SpaceshipId>1</SpaceshipId>
     </CrewMember>
